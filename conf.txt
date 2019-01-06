@@ -1,0 +1,5 @@
+#/* properties updated */
+#Tue Jan 01 10:53:31 ART 2019
+cambio=false
+face=www.facebook.com/edulogonline
+modo=normal
