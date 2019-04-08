@@ -115,7 +115,7 @@ public class ModoManual extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Modo Manual");
+        setTitle("Modo Experto");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cargas"));
 
@@ -180,6 +180,11 @@ public class ModoManual extends javax.swing.JDialog {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/iconos/floppy20 (Copiar).png"))); // NOI18N
         jButton3.setText("Guardar / Editar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/iconos/delete84 (Copiar).png"))); // NOI18N
         jButton7.setText("Eliminar");

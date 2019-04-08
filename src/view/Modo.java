@@ -59,7 +59,12 @@ public class Modo extends javax.swing.JDialog {
         jRadioButton1.setText("Normal");
 
         buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("Manual");
+        jRadioButton2.setText("Experto");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/iconos/chgfgfgeck.png"))); // NOI18N
         jButton1.setText("Aceptar");
@@ -128,6 +133,10 @@ public class Modo extends javax.swing.JDialog {
             Logger.getLogger(Modo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments
