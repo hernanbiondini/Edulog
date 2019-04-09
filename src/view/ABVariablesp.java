@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
  * ABVariablesp.java
  *
  * Created on 21-nov-2011, 21:00:30
@@ -11,6 +11,8 @@
 package view;
 
 import Controller.VariablepController;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -27,6 +29,26 @@ public class ABVariablesp extends javax.swing.JDialog {
     public ABVariablesp(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setFocusable(false);
+        jTextField1.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Nothing
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Nothing 
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    System.out.println("VK_ENTER jTextField1");
+                    guardar();
+                }
+            }
+        });
     }
 
     /**
@@ -131,6 +153,11 @@ public class ABVariablesp extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        guardar();
+        this.jTextField1.requestFocus();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void guardar() {
         try {
             if (jTextField1.getText().trim().equals("") == false) {
                 // Se reemplazan espacios en blanco y se pone la primer letra en mayuscula
@@ -151,7 +178,7 @@ public class ABVariablesp extends javax.swing.JDialog {
             System.out.println("Exception: " + e.getMessage());
         }
         this.jTextField1.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     /**
      * @param args the command line arguments

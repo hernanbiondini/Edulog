@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
  * ABPredicado.java
  *
  * Created on 19-nov-2011, 10:41:11
@@ -11,6 +11,8 @@
 package view;
 
 import Controller.PredicadoController;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,6 +30,26 @@ public class ABPredicado extends javax.swing.JDialog {
         this.setLocationRelativeTo(parent);
         this.jTextField1.requestFocus();
         this.jTextField2.setEnabled(false);
+        this.setFocusable(false);
+        jTextField1.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Nothing
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Nothing 
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    System.out.println("VK_ENTER jTextField1");
+                    guardar();
+                }
+            }
+        });
     }
 
     /**
@@ -167,17 +189,13 @@ public class ABPredicado extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void guardar() {
         if (jTextField1.getText().trim().equals("") == false) {
             if (jRadioButton1.isSelected()) {
                 this.predicado1.setTipo(1);
             } else {
                 this.predicado1.setTipo(2);
-                if(this.jTextField2.getText().equals("") == false){
+                if (this.jTextField2.getText().equals("") == false) {
                     this.predicado1.setOpuestoNat(this.jTextField2.getText());
                     String prolog = this.jTextField2.getText().toLowerCase().replace(' ', '_');
                     this.predicado1.setOpuestoPro(prolog);
@@ -200,7 +218,14 @@ public class ABPredicado extends javax.swing.JDialog {
         }
         this.jTextField1.setText("");
         this.jTextField2.setText("");
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        guardar();
+        this.jTextField1.requestFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -245,5 +270,4 @@ public class ABPredicado extends javax.swing.JDialog {
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
-    
 }

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
  * ABSujeto.java
  *
  * Created on 19-nov-2011, 10:39:48
@@ -11,6 +11,8 @@
 package view;
 
 import Controller.SujetoController;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +27,27 @@ public class ABSujeto extends javax.swing.JDialog {
     public ABSujeto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(parent); 
+        this.setLocationRelativeTo(parent);
+        this.setFocusable(false);
+        jTextField1.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Nothing
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Nothing 
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    System.out.println("VK_ENTER jTextField1");
+                    guardar();
+                }
+            }
+        });
     }
 
     /**
@@ -130,6 +152,10 @@ public class ABSujeto extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        guardar();
+        this.jTextField1.requestFocus();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    private void guardar() {
         if (jTextField1.getText().trim().equals("") == false) {
             try {
                 sujeto1.setNat(jTextField1.getText());
@@ -146,7 +172,7 @@ public class ABSujeto extends javax.swing.JDialog {
             }
         }
         this.jTextField1.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
