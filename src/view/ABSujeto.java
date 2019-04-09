@@ -43,7 +43,6 @@ public class ABSujeto extends javax.swing.JDialog {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    System.out.println("VK_ENTER jTextField1");
                     guardar();
                 }
             }
