@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,7 +29,9 @@ public class Sujeto implements Cloneable, Serializable {
     private int id;
     private String nat;
     private String pro;
-
+    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    @ManyToOne
+    private Categoria categoria;
 
     public Sujeto(){};
 
@@ -53,6 +57,14 @@ public class Sujeto implements Cloneable, Serializable {
 
     public void setPro(String pro) {
         this.pro = pro;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
@@ -89,10 +101,5 @@ public class Sujeto implements Cloneable, Serializable {
     public String toString() {
         return this.getNat();
     }
-
-
-   
-
-
 
 }

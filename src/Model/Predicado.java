@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -33,6 +35,9 @@ public class Predicado implements Cloneable, Serializable {
     private String opuestoNat;
     private String opuestoPro;
     private int afectado;
+    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    @ManyToOne
+    private Categoria categoria;
 
     public Predicado(){};
 
@@ -93,6 +98,14 @@ public class Predicado implements Cloneable, Serializable {
         this.afectado = afectado;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -127,12 +140,5 @@ public class Predicado implements Cloneable, Serializable {
     public String toString() {
         return this.getNat();
     }
-
-
-    
-
-    
-
-
 
 }

@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -20,13 +22,11 @@ import javax.persistence.Table;
  * @author Hernan
  */
 
-
 @Entity
 @Table(name = "variablep")
 @NamedQueries({
 @NamedQuery(name = "variablep.all", query = "SELECT m FROM Variablep m ORDER BY m.nat")
 })
-
 
 public class Variablep implements Cloneable, Serializable{
 
@@ -36,6 +36,9 @@ public class Variablep implements Cloneable, Serializable{
     private int id;
     private String nat;
     private String pro;
+    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    @ManyToOne
+    private Categoria categoria;
 
     public Variablep() {
     }
@@ -62,6 +65,14 @@ public class Variablep implements Cloneable, Serializable{
 
     public void setPro(String pro) {
         this.pro = pro;
+    }
+    
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
@@ -98,13 +109,5 @@ public class Variablep implements Cloneable, Serializable{
         hash = 59 * hash + (this.pro != null ? this.pro.hashCode() : 0);
         return hash;
     }
-
-    
-
-
-
-
-
-
 
 }

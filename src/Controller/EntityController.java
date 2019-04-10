@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Categoria;
 import Model.Hecho;
 import Model.Lista;
 import Model.Predicado;
@@ -144,6 +145,21 @@ public abstract class EntityController {
         }
     }
 
+    protected void removeCategoria(Categoria entity) throws Exception {
+        EntityManager em = this.getEntityManager();
+        em.getTransaction().begin();
+        try {
+            Categoria entityx = em.find(Categoria.class, entity.getId());
+            em.remove(entityx);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
+    
     protected void removePredicado(Predicado entity) throws Exception {
         EntityManager em = this.getEntityManager();
         em.getTransaction().begin();
