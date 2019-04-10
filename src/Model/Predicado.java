@@ -20,8 +20,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "predicado")
 @NamedQueries({
-    @NamedQuery(name = "predicado.all", query = "SELECT m FROM Predicado m ORDER BY m.nat"),
-    @NamedQuery(name = "predicadoAfectado.all", query = "SELECT m FROM Predicado m WHERE m.afectado = 1 ORDER BY m.nat")
+    @NamedQuery(name = "predicado.all", query = "SELECT m FROM Predicado m ORDER BY m.categoria, m.nat"),
+    @NamedQuery(name = "predicadoAfectado.all", query = "SELECT m FROM Predicado m WHERE m.afectado = 1 ORDER BY m.categoria, m.nat")
 })
 public class Predicado implements Cloneable, Serializable {
 
@@ -35,7 +35,8 @@ public class Predicado implements Cloneable, Serializable {
     private String opuestoNat;
     private String opuestoPro;
     private int afectado;
-    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    
+    @JoinColumn(name = "IDCATEGORIA", referencedColumnName = "ID_CATEGORIA")
     @ManyToOne
     private Categoria categoria;
 

@@ -11,6 +11,7 @@
 package view;
 
 import Controller.SujetoController;
+import Model.Categoria;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
@@ -163,6 +164,11 @@ public class ABSujeto extends javax.swing.JDialog {
                 System.out.println(" ");
                 System.out.println("Sujeto: " + prolog);
                 System.out.println(" ");
+                
+                Categoria c = new Categoria();
+                c.setId(1);
+                sujeto1.setCategoria(c);
+                
                 SujetoController.getInstance().guardar(sujeto1); // TODO add your handling code here:
                 //JOptionPane.showMessageDialog(this, "El Sujeto se creo exitosamente", "Guardar", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {

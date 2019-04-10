@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sujeto")
 @NamedQueries({
-    @NamedQuery(name = "sujeto.all", query = "SELECT m FROM Sujeto m ORDER BY m.nat")
+    @NamedQuery(name = "sujeto.all", query = "SELECT m FROM Sujeto m ORDER BY m.categoria, m.nat")
 })
 public class Sujeto implements Cloneable, Serializable {
     @Id
@@ -29,11 +29,19 @@ public class Sujeto implements Cloneable, Serializable {
     private int id;
     private String nat;
     private String pro;
-    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    
+    @JoinColumn(name = "IDCATEGORIA", referencedColumnName = "ID_CATEGORIA")
     @ManyToOne
     private Categoria categoria;
 
     public Sujeto(){};
+
+    public Sujeto(int id, String nat, String pro, Categoria categoria) {
+        this.id = id;
+        this.nat = nat;
+        this.pro = pro;
+        this.categoria = categoria;
+    }
 
     public int getId() {
         return id;

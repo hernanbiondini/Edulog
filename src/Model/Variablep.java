@@ -25,7 +25,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "variablep")
 @NamedQueries({
-@NamedQuery(name = "variablep.all", query = "SELECT m FROM Variablep m ORDER BY m.nat")
+@NamedQuery(name = "variablep.all", query = "SELECT m FROM Variablep m ORDER BY m.categoria, m.nat")
 })
 
 public class Variablep implements Cloneable, Serializable{
@@ -36,7 +36,7 @@ public class Variablep implements Cloneable, Serializable{
     private int id;
     private String nat;
     private String pro;
-    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID_CATEGORIA")
+    @JoinColumn(name = "IDCATEGORIA", referencedColumnName = "ID_CATEGORIA")
     @ManyToOne
     private Categoria categoria;
 
