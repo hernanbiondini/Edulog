@@ -12,6 +12,7 @@ package view;
 
 import Controller.CategoriaController;
 import Controller.VariablepController;
+import Model.Categoria;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
@@ -195,6 +196,8 @@ public class ABVariablesp extends javax.swing.JDialog {
                 System.out.println(" ");
                 System.out.println("Variable: " + prolog);
                 System.out.println(" ");
+                this.categoria1 = (Categoria) jComboBox1.getSelectedItem();          
+                variablep1.setCategoria(this.categoria1); 
                 VariablepController.getInstance().guardar(variablep1); // TODO add your handling code here:
                 //JOptionPane.showMessageDialog(this, "El Sujeto se creo exitosamente", "Guardar", JOptionPane.INFORMATION_MESSAGE);
             }

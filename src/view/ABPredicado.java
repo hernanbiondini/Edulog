@@ -12,6 +12,7 @@ package view;
 
 import Controller.CategoriaController;
 import Controller.PredicadoController;
+import Model.Categoria;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
@@ -239,6 +240,8 @@ public class ABPredicado extends javax.swing.JDialog {
                 String prolog = predicado1.getNat().toLowerCase().replace(' ', '_');
                 predicado1.setPro(prolog);
                 predicado1.setAfectado(0);
+                this.categoria1 = (Categoria) jComboBox1.getSelectedItem();          
+                predicado1.setCategoria(this.categoria1); 
                 PredicadoController.getInstance().guardar(predicado1); // TODO add your handling code here:
                 //JOptionPane.showMessageDialog(this, "El Predicado se creo exitosamente", "Guardar", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
