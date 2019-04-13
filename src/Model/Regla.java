@@ -19,7 +19,8 @@ import javax.persistence.Table;
 @Table(name = "regla")
 @NamedQueries({
     @NamedQuery(name = "regla.all", query = "SELECT m FROM Regla m WHERE m.nat NOT LIKE 'M' ORDER BY m.nombre"),
-    @NamedQuery(name = "regla2.all", query = "SELECT m FROM Regla m WHERE m.nat NOT LIKE 'M' ORDER BY m.pro")
+    @NamedQuery(name = "regla2.all", query = "SELECT m FROM Regla m WHERE m.nat NOT LIKE 'M' ORDER BY m.pro"),
+    @NamedQuery(name = "reglaPro.all", query = "SELECT m FROM Regla m ORDER BY m.pro")
 })
 public class Regla implements Cloneable, Serializable {
 

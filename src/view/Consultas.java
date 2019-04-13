@@ -143,7 +143,7 @@ public class Consultas extends javax.swing.JDialog {
          // Se vuelve a escribir el .pl leyendo hechos y reglas de la base de datos
         consistencia();
         // Se lee el contenido del .pl recien escrito
-        leerPl();
+        //leerPl();
        
     }
 
@@ -226,6 +226,8 @@ public class Consultas extends javax.swing.JDialog {
         });
 
         jTabbedPane1.setToolTipText("");
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(1106, 5));
 
         jComboBox3.setMaximumRowCount(25);
 
@@ -478,78 +480,74 @@ public class Consultas extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(27, 27, 27))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6)
+                            .addComponent(jComboBox3, 0, 250, Short.MAX_VALUE)
+                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jComboBox7, 0, 250, Short.MAX_VALUE)
+                                .addComponent(jComboBox10, 0, 250, Short.MAX_VALUE)
+                                .addComponent(jComboBox13, 0, 250, Short.MAX_VALUE)
+                                .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5)
+                            .addComponent(jComboBox5, 0, 251, Short.MAX_VALUE)
+                            .addComponent(jComboBox8, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox11, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox14, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(188, 188, 188)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jComboBox53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(292, 292, 292)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(57, 57, 57)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox2)
-                                            .addComponent(jCheckBox3)
-                                            .addComponent(jCheckBox4)
-                                            .addComponent(jCheckBox5)))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(500, 500, 500)
-                                        .addComponent(jLabel5)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane2)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(51, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3))
-                        .addGap(21, 21, 21))))
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(402, 402, 402)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBox3)
+                                    .addComponent(jCheckBox2))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(379, 379, 379))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jButton6)
@@ -570,7 +568,7 @@ public class Consultas extends javax.swing.JDialog {
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -593,26 +591,27 @@ public class Consultas extends javax.swing.JDialog {
                             .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(jButton1))))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Consultas", jPanel3);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(50, 627));
 
         jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable1.setShowHorizontalLines(false);
@@ -639,14 +638,13 @@ public class Consultas extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -657,25 +655,25 @@ public class Consultas extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(842, 842, 842)
-                .addComponent(jTabbedPane2)
+                .addContainerGap(1069, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(473, Short.MAX_VALUE)))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1053, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(611, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jTabbedPane2)
+                .addContainerGap()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jTabbedPane1)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -684,14 +682,289 @@ public class Consultas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox4ItemStateChanged
-        this.jComboBox5.setEnabled(true);
-        Predicado p = new Predicado();
-        p = (Predicado) jComboBox4.getSelectedItem();
-        if (p.getTipo() == 1) {
-            this.jComboBox5.setEnabled(false);
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            cambioSet();
+        } catch (IOException ex) {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jComboBox4ItemStateChanged
+    }//GEN-LAST:event_formWindowClosing
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            cambio();
+            SPV s;
+            s = new SPV(null, true);
+            s.setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Reglas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        BaseConocimiento s = new BaseConocimiento(null, true);
+        s.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox55ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox55ItemStateChanged
+        this.jComboBox12.setEnabled(true);
+        this.jComboBox13.setEnabled(true);
+        this.jComboBox14.setEnabled(true);
+        String union1 = jComboBox55.getSelectedItem().toString();
+        if (union1.equalsIgnoreCase(".")) {
+
+            this.jComboBox12.setEnabled(false);
+            this.jComboBox13.setEnabled(false);
+            this.jComboBox14.setEnabled(false);
+
+        } else {
+            this.jComboBox14.setEnabled(true);
+            Predicado p = new Predicado();
+            p = (Predicado) jComboBox13.getSelectedItem();
+            if (p.getTipo() == 1) {
+                this.jComboBox14.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_jComboBox55ItemStateChanged
+
+    private void jComboBox54ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox54ItemStateChanged
+        this.jComboBox6.setEnabled(true);
+        this.jComboBox7.setEnabled(true);
+        this.jComboBox8.setEnabled(true);
+        this.jComboBox53.setEnabled(true);
+        String union1 = jComboBox54.getSelectedItem().toString();
+        if (union1.equalsIgnoreCase(".")) {
+            this.jComboBox6.setEnabled(false);
+            this.jComboBox7.setEnabled(false);
+            this.jComboBox8.setEnabled(false);
+            this.jComboBox53.setEnabled(false);
+
+            this.jComboBox9.setEnabled(false);
+            this.jComboBox10.setEnabled(false);
+            this.jComboBox11.setEnabled(false);
+            this.jComboBox55.setEnabled(false);
+
+            this.jComboBox12.setEnabled(false);
+            this.jComboBox13.setEnabled(false);
+            this.jComboBox14.setEnabled(false);
+
+        } else {
+            this.jComboBox8.setEnabled(true);
+            Predicado p = new Predicado();
+            p = (Predicado) jComboBox7.getSelectedItem();
+            if (p.getTipo() == 1) {
+                this.jComboBox8.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_jComboBox54ItemStateChanged
+
+    private void jComboBox53ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox53ItemStateChanged
+        this.jComboBox9.setEnabled(true);
+        this.jComboBox10.setEnabled(true);
+        this.jComboBox11.setEnabled(true);
+        this.jComboBox55.setEnabled(true);
+        String union1 = jComboBox53.getSelectedItem().toString();
+        if (union1.equalsIgnoreCase(".")) {
+
+            this.jComboBox9.setEnabled(false);
+            this.jComboBox10.setEnabled(false);
+            this.jComboBox11.setEnabled(false);
+            this.jComboBox55.setEnabled(false);
+
+            this.jComboBox12.setEnabled(false);
+            this.jComboBox13.setEnabled(false);
+            this.jComboBox14.setEnabled(false);
+
+        } else {
+            this.jComboBox11.setEnabled(true);
+            Predicado p = new Predicado();
+            p = (Predicado) jComboBox10.getSelectedItem();
+            if (p.getTipo() == 1) {
+                this.jComboBox11.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_jComboBox53ItemStateChanged
+
+    private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox14ActionPerformed
+
+    private void jComboBox13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox13ItemStateChanged
+        this.jComboBox14.setEnabled(true);
+        Predicado p = new Predicado();
+        p = (Predicado) jComboBox13.getSelectedItem();
+        if (p.getTipo() == 1) {
+            this.jComboBox14.setEnabled(false);
+        }
+    }//GEN-LAST:event_jComboBox13ItemStateChanged
+
+    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox11ActionPerformed
+
+    private void jComboBox10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox10ItemStateChanged
+        this.jComboBox11.setEnabled(true);
+        Predicado p = new Predicado();
+        p = (Predicado) jComboBox10.getSelectedItem();
+        if (p.getTipo() == 1) {
+            this.jComboBox11.setEnabled(false);
+        }
+    }//GEN-LAST:event_jComboBox10ItemStateChanged
+
+    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox8ActionPerformed
+
+    private void jComboBox7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox7ItemStateChanged
+        this.jComboBox8.setEnabled(true);
+        Predicado p = new Predicado();
+        p = (Predicado) jComboBox7.getSelectedItem();
+        if (p.getTipo() == 1) {
+            this.jComboBox8.setEnabled(false);
+        }
+    }//GEN-LAST:event_jComboBox7ItemStateChanged
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/ca.jpg"))); // NOI18N
+        jTextArea1.setText(".");
+        jLabel10.setText(".");
+        jTextArea3.setText(".");
+        jLabel12.setText(".");
+        jTextArea2.setText(".");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
+        jTextArea2.setForeground(Color.BLACK);
+        if (jTextArea1.getText().equalsIgnoreCase(".")) {
+            Icon Imagen;
+            Random rnd = new Random();
+            int hhh = (int) (rnd.nextDouble() * 100 + 1);
+            if (hhh < 50) {
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"))); // NOI18N
+                Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"));
+            } else {
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"))); // NOI18N
+                Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"));
+            }
+            JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
+        } else {
+
+            jTextArea2.setText("");
+            Consulta c = new Consulta();
+
+            try {
+                String respuestaUnica = "";
+                String respuestaMultiple = "";
+                String respuestaFinal = "";
+
+                respuestaUnica = c.preguntar(consulta);
+
+                java.util.Hashtable[] s = c.preguntarVar(consulta);
+                for (int i = 0; i < s.length; i++) {
+                    String[] claves = (String[]) s[i].keySet().toArray(new String[0]);
+                    java.util.Arrays.sort(claves);
+                    for (String clave : claves) {
+                        respuestaMultiple = respuestaMultiple + (clave + ":" + s[i].get(clave) + " ");
+                    }
+                    if (respuestaMultiple.equals("") == false) {
+                        respuestaMultiple = respuestaMultiple + ",  ";
+                    }
+                }
+                if (respuestaMultiple.length() > 3) {
+                    respuestaMultiple = respuestaMultiple.substring(0, respuestaMultiple.length() - 3);
+                }
+                if (respuestaUnica.equals("") == false) {
+
+                    respuestaFinal = respuestaUnica;
+                    Random rnd = new Random();
+                    int hhh = (int) (rnd.nextDouble() * 100 + 1);
+                    if (hhh < 18) {
+                        exito = "sir";
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/nome digas.png"))); // NOI18N
+                    } else {
+                        rnd = new Random();
+                        hhh = (int) (rnd.nextDouble() * 100 + 1);
+
+                        if (hhh >= 0 && hhh <= 20) {
+                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/fuck.jpg")));
+                        }
+                        if (hhh > 20 && hhh <= 40) {
+                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/true.png")));
+                        }
+                        if (hhh > 40 && hhh <= 60) {
+                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/fredy.jpg")));
+                        }
+                        if (hhh > 60 && hhh <= 80) {
+                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/sir.png")));
+                        }
+                        if (hhh > 80 && hhh <= 100) {
+                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/cereal2.png")));
+                        }
+                    }
+                }
+                if (respuestaMultiple.equals("") == false) {
+                    Random rnd = new Random();
+                    int hhh;
+                    hhh = (int) (rnd.nextDouble() * 100 + 1);
+                    respuestaFinal = respuestaFinal + " /  " + respuestaMultiple;
+                    if (hhh >= 0 && hhh <= 25) {
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/gordo.jpg")));
+                    }
+                    if (hhh > 25 && hhh <= 50) {
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mother.jpg")));
+                    }
+                    if (hhh > 50 && hhh <= 75) {
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/obama.jpg")));
+                    }
+                    if (hhh > 75 && hhh <= 100) {
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/Surprice.png")));
+                    }
+
+                }
+
+                respuestaFinal = respuestaFinal.replace('_', ' ');
+                jTextArea2.setText(respuestaFinal);
+                if (jTextArea2.getText().trim().equals("")) {
+                    Random rnd = new Random();
+                    int hhh = (int) (rnd.nextDouble() * 100 + 1);
+                    if (hhh < 50) {
+                        jTextArea2.append("No se puede responder a la consulta actual: datos insuficientes en la Base de Conocimiento!");
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"))); // NOI18N
+                        Icon Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"));
+                        JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
+                    } else {
+                        jTextArea2.append("No se puede responder a la consulta actual: datos insuficientes en la Base de Conocimiento!");
+                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"))); // NOI18N
+                        Icon Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"));
+                        JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
+                    }
+
+                }
+            } catch (Exception e) {
+                Logger.getLogger(ABHechos.class.getName()).log(Level.SEVERE, null, e);
+                jTextArea2.append("ERROR EN LA CONSULTA: Algún predicado no se encuentra en la base de conocimiento!");
+                jTextArea2.setForeground(Color.red);
+                //JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                System.out.println("Exception: " + e.getMessage());
+                Random rnd = new Random();
+                int hhh = (int) (rnd.nextDouble() * 100 + 1);
+                if (hhh >= 0 && hhh <= 25) {
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/okay.jpg"))); // NOI18N
+                }
+                if (hhh > 25 && hhh <= 50) {
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/lpm.jpg"))); // NOI18N
+                }
+                if (hhh > 50 && hhh <= 75) {
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/pocker.jpg"))); // NOI18N
+                }
+                if (hhh > 75 && hhh <= 100) {
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/WtF.png"))); // NOI18N
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         if ((suvas.size() > 0) && (predicados.size() > 0)) {
@@ -1053,296 +1326,20 @@ public class Consultas extends javax.swing.JDialog {
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"))); // NOI18N
             }
         }
-
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
-        jTextArea2.setForeground(Color.BLACK);
-        if (jTextArea1.getText().equalsIgnoreCase(".")) {
-            Icon Imagen;
-            Random rnd = new Random();
-            int hhh = (int) (rnd.nextDouble() * 100 + 1);
-            if (hhh < 50) {
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"))); // NOI18N        
-                Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"));
-            } else {
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"))); // NOI18N        
-                Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"));
-            }
-            JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
-        } else {
-
-            jTextArea2.setText("");
-            Consulta c = new Consulta();
-
-            try {
-                String respuestaUnica = "";
-                String respuestaMultiple = "";
-                String respuestaFinal = "";
-
-                respuestaUnica = c.preguntar(consulta);
-
-                java.util.Hashtable[] s = c.preguntarVar(consulta);
-                for (int i = 0; i < s.length; i++) {
-                    String[] claves = (String[]) s[i].keySet().toArray(new String[0]);
-                    java.util.Arrays.sort(claves);
-                    for (String clave : claves) {
-                        respuestaMultiple = respuestaMultiple + (clave + ":" + s[i].get(clave) + " ");
-                    }
-                    if (respuestaMultiple.equals("") == false) {
-                        respuestaMultiple = respuestaMultiple + ",  ";
-                    }
-                }
-                if (respuestaMultiple.length() > 3) {
-                    respuestaMultiple = respuestaMultiple.substring(0, respuestaMultiple.length() - 3);
-                }
-                if (respuestaUnica.equals("") == false) {
-
-                    respuestaFinal = respuestaUnica;
-                    Random rnd = new Random();
-                    int hhh = (int) (rnd.nextDouble() * 100 + 1);
-                    if (hhh < 18) {
-                        exito = "sir";
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/nome digas.png"))); // NOI18N
-                    } else {
-                        rnd = new Random();
-                        hhh = (int) (rnd.nextDouble() * 100 + 1);
-
-                        if (hhh >= 0 && hhh <= 20) {
-                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/fuck.jpg")));
-                        }
-                        if (hhh > 20 && hhh <= 40) {
-                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/true.png")));
-                        }
-                        if (hhh > 40 && hhh <= 60) {
-                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/fredy.jpg")));
-                        }
-                        if (hhh > 60 && hhh <= 80) {
-                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/sir.png")));
-                        }
-                        if (hhh > 80 && hhh <= 100) {
-                            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/cereal2.png")));
-                        }
-                    }
-                }
-                if (respuestaMultiple.equals("") == false) {
-                    Random rnd = new Random();
-                    int hhh;
-                    hhh = (int) (rnd.nextDouble() * 100 + 1);
-                    respuestaFinal = respuestaFinal + " /  " + respuestaMultiple;
-                    if (hhh >= 0 && hhh <= 25) {
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/gordo.jpg")));
-                    }
-                    if (hhh > 25 && hhh <= 50) {
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mother.jpg")));
-                    }
-                    if (hhh > 50 && hhh <= 75) {
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/obama.jpg")));
-                    }
-                    if (hhh > 75 && hhh <= 100) {
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/Surprice.png")));
-                    }
-
-                }
-
-                respuestaFinal = respuestaFinal.replace('_', ' ');
-                jTextArea2.setText(respuestaFinal);
-                if (jTextArea2.getText().trim().equals("")) {
-                    Random rnd = new Random();
-                    int hhh = (int) (rnd.nextDouble() * 100 + 1);
-                    if (hhh < 50) {
-                        jTextArea2.append("No se puede responder a la consulta actual: datos insuficientes en la Base de Conocimiento!");
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"))); // NOI18N        
-                        Icon Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/mierda.jpg"));
-                        JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
-                    } else {
-                        jTextArea2.append("No se puede responder a la consulta actual: datos insuficientes en la Base de Conocimiento!");
-                        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"))); // NOI18N        
-                        Icon Imagen = new javax.swing.ImageIcon(getClass().getResource("/view/memes/FacePalm.png"));
-                        JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
-                    }
-
-                }
-            } catch (Exception e) {
-                Logger.getLogger(ABHechos.class.getName()).log(Level.SEVERE, null, e);
-                jTextArea2.append("ERROR EN LA CONSULTA: Algún predicado no se encuentra en la base de conocimiento!");
-                jTextArea2.setForeground(Color.red);
-                //JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                System.out.println("Exception: " + e.getMessage());
-                Random rnd = new Random();
-                int hhh = (int) (rnd.nextDouble() * 100 + 1);
-                if (hhh >= 0 && hhh <= 25) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/okay.jpg"))); // NOI18N
-                }
-                if (hhh > 25 && hhh <= 50) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/lpm.jpg"))); // NOI18N
-                }
-                if (hhh > 50 && hhh <= 75) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/pocker.jpg"))); // NOI18N     
-                }
-                if (hhh > 75 && hhh <= 100) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/WtF.png"))); // NOI18N     
-                }
-            }
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/memes/ca.jpg"))); // NOI18N    
-        jTextArea1.setText(".");
-        jLabel10.setText(".");
-        jTextArea3.setText(".");
-        jLabel12.setText(".");
-        jTextArea2.setText(".");
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
 
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
-    private void jComboBox7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox7ItemStateChanged
-        this.jComboBox8.setEnabled(true);
+    private void jComboBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox4ItemStateChanged
+        this.jComboBox5.setEnabled(true);
         Predicado p = new Predicado();
-        p = (Predicado) jComboBox7.getSelectedItem();
+        p = (Predicado) jComboBox4.getSelectedItem();
         if (p.getTipo() == 1) {
-            this.jComboBox8.setEnabled(false);
+            this.jComboBox5.setEnabled(false);
         }
-    }//GEN-LAST:event_jComboBox7ItemStateChanged
-
-    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox8ActionPerformed
-
-    private void jComboBox10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox10ItemStateChanged
-        this.jComboBox11.setEnabled(true);
-        Predicado p = new Predicado();
-        p = (Predicado) jComboBox10.getSelectedItem();
-        if (p.getTipo() == 1) {
-            this.jComboBox11.setEnabled(false);
-        }
-    }//GEN-LAST:event_jComboBox10ItemStateChanged
-
-    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox11ActionPerformed
-
-    private void jComboBox13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox13ItemStateChanged
-        this.jComboBox14.setEnabled(true);
-        Predicado p = new Predicado();
-        p = (Predicado) jComboBox13.getSelectedItem();
-        if (p.getTipo() == 1) {
-            this.jComboBox14.setEnabled(false);
-        }
-    }//GEN-LAST:event_jComboBox13ItemStateChanged
-
-    private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox14ActionPerformed
-
-    private void jComboBox53ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox53ItemStateChanged
-        this.jComboBox9.setEnabled(true);
-        this.jComboBox10.setEnabled(true);
-        this.jComboBox11.setEnabled(true);
-        this.jComboBox55.setEnabled(true);
-        String union1 = jComboBox53.getSelectedItem().toString();
-        if (union1.equalsIgnoreCase(".")) {
-
-            this.jComboBox9.setEnabled(false);
-            this.jComboBox10.setEnabled(false);
-            this.jComboBox11.setEnabled(false);
-            this.jComboBox55.setEnabled(false);
-
-            this.jComboBox12.setEnabled(false);
-            this.jComboBox13.setEnabled(false);
-            this.jComboBox14.setEnabled(false);
-
-        } else {
-            this.jComboBox11.setEnabled(true);
-            Predicado p = new Predicado();
-            p = (Predicado) jComboBox10.getSelectedItem();
-            if (p.getTipo() == 1) {
-                this.jComboBox11.setEnabled(false);
-            }
-        }
-    }//GEN-LAST:event_jComboBox53ItemStateChanged
-
-    private void jComboBox54ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox54ItemStateChanged
-        this.jComboBox6.setEnabled(true);
-        this.jComboBox7.setEnabled(true);
-        this.jComboBox8.setEnabled(true);
-        this.jComboBox53.setEnabled(true);
-        String union1 = jComboBox54.getSelectedItem().toString();
-        if (union1.equalsIgnoreCase(".")) {
-            this.jComboBox6.setEnabled(false);
-            this.jComboBox7.setEnabled(false);
-            this.jComboBox8.setEnabled(false);
-            this.jComboBox53.setEnabled(false);
-
-            this.jComboBox9.setEnabled(false);
-            this.jComboBox10.setEnabled(false);
-            this.jComboBox11.setEnabled(false);
-            this.jComboBox55.setEnabled(false);
-
-            this.jComboBox12.setEnabled(false);
-            this.jComboBox13.setEnabled(false);
-            this.jComboBox14.setEnabled(false);
-
-        } else {
-            this.jComboBox8.setEnabled(true);
-            Predicado p = new Predicado();
-            p = (Predicado) jComboBox7.getSelectedItem();
-            if (p.getTipo() == 1) {
-                this.jComboBox8.setEnabled(false);
-            }
-        }
-    }//GEN-LAST:event_jComboBox54ItemStateChanged
-
-    private void jComboBox55ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox55ItemStateChanged
-        this.jComboBox12.setEnabled(true);
-        this.jComboBox13.setEnabled(true);
-        this.jComboBox14.setEnabled(true);
-        String union1 = jComboBox55.getSelectedItem().toString();
-        if (union1.equalsIgnoreCase(".")) {
-
-            this.jComboBox12.setEnabled(false);
-            this.jComboBox13.setEnabled(false);
-            this.jComboBox14.setEnabled(false);
-
-        } else {
-            this.jComboBox14.setEnabled(true);
-            Predicado p = new Predicado();
-            p = (Predicado) jComboBox13.getSelectedItem();
-            if (p.getTipo() == 1) {
-                this.jComboBox14.setEnabled(false);
-            }
-        }
-    }//GEN-LAST:event_jComboBox55ItemStateChanged
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        BaseConocimiento s = new BaseConocimiento(null, true);
-        s.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            cambio();
-            SPV s;
-            s = new SPV(null, true);
-            s.setVisible(true);
-            this.dispose();
-        } catch (IOException ex) {
-            Logger.getLogger(Reglas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            cambioSet();
-        } catch (IOException ex) {
-            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_formWindowClosing
+    }//GEN-LAST:event_jComboBox4ItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1497,7 +1494,8 @@ public class Consultas extends javax.swing.JDialog {
 
             // Se vuelve a escribir recorriendo la base de hechos
             List<Hecho> al = new ArrayList();
-            al = HechoController.getInstance().getAllHecho();
+            //al = HechoController.getInstance().getAllHecho3();
+            al = HechoController.getInstance().getAllHechopro();
 
             consulta = " % Hechos.";
             FileWriter archivo = null;
@@ -1533,7 +1531,8 @@ public class Consultas extends javax.swing.JDialog {
 
             // Se vuelve a escribir recorriendo la base de reglas
             List<Regla> al2 = new ArrayList();
-            al2 = ReglaController.getInstance().getAllRegla();
+            //al2 = ReglaController.getInstance().getAllRegla();
+            al2 = ReglaController.getInstance().getAllReglaPro();
 
             consulta = "% Reglas.";
             archivo = null;

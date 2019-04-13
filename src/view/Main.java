@@ -334,6 +334,7 @@ public class Main extends javax.swing.JFrame {
             c.setVisible(true);
             this.cambioGet();
             while (cambio.equals("true")) {
+                System.out.println("lalala");
                 this.cambioGet();
                 if (cambio.equals("true")) {
                     c = new Consultas(null, true);
@@ -481,7 +482,8 @@ private String cambio = "";
 
             // Se vuelve a escribir recorriendo la base de hechos
             List<Hecho> al = new ArrayList();
-            al = HechoController.getInstance().getAllHecho3();
+            //al = HechoController.getInstance().getAllHecho3();
+            al = HechoController.getInstance().getAllHechopro();
 
             consulta = " % Hechos.";
             FileWriter archivo = null;
@@ -495,6 +497,7 @@ private String cambio = "";
 
                 Hecho h = it.next();
                 consulta = h.getPro();
+                //System.out.println(consulta);
                 archivo = null;
                 pw = null;
 
@@ -517,7 +520,8 @@ private String cambio = "";
 
             // Se vuelve a escribir recorriendo la base de reglas
             List<Regla> al2 = new ArrayList();
-            al2 = ReglaController.getInstance().getAllRegla2();
+            //al2 = ReglaController.getInstance().getAllRegla2();
+            al2 = ReglaController.getInstance().getAllReglaPro();
 
             consulta = "% Reglas.";
             archivo = null;

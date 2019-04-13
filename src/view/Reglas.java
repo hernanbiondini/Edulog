@@ -1513,7 +1513,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
 
         // Se vuelve a escribir recorriendo la base de hechos
         List<Hecho> al = new ArrayList();
-        al = HechoController.getInstance().getAllHecho3();
+        //al = HechoController.getInstance().getAllHecho3();
+        al = HechoController.getInstance().getAllHechopro();
 
         for (Iterator<Hecho> it = al.iterator(); it.hasNext();) {
 
@@ -1537,7 +1538,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         }//for
 // Se vuelve a escribir recorriendo la base de reglas
         List<Regla> al2 = new ArrayList();
-        al2 = ReglaController.getInstance().getAllRegla2();
+        //al2 = ReglaController.getInstance().getAllRegla2();
+        al2 = ReglaController.getInstance().getAllReglaPro();
 
         for (Iterator<Regla> it = al2.iterator(); it.hasNext();) {
 
@@ -1574,7 +1576,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
 
         // Se vuelve a escribir recorriendo la base de hechos
         List<Hecho> al = new ArrayList();
-        al = HechoController.getInstance().getAllHecho3();
+        //al = HechoController.getInstance().getAllHecho3();
+        al = HechoController.getInstance().getAllHechopro();
 
         for (Iterator<Hecho> it = al.iterator(); it.hasNext();) {
 

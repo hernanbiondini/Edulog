@@ -9,6 +9,8 @@ public class ReglaController extends EntityController {
 
     private static final String QUERY_GET_ALL_REGLA = "regla.all";
     private static final String QUERY_GET_ALL_REGLA2 = "regla2.all";
+    private static final String QUERY_GET_ALL_REGLAPRO = "reglaPro.all";
+
     private static ReglaController reglaController;
 
     ReglaController() {
@@ -35,6 +37,10 @@ public class ReglaController extends EntityController {
 
     public List<Regla> getAllRegla2() {
         return this.executeNamedQuery(QUERY_GET_ALL_REGLA2);
+    }
+
+    public List<Regla> getAllReglaPro() {
+        return this.executeNamedQuery(QUERY_GET_ALL_REGLAPRO);
     }
 
     public List<Regla> getReglasManuales() {

@@ -22,8 +22,9 @@ import javax.persistence.Table;
 @Table(name = "hecho")
 @NamedQueries({
     @NamedQuery(name = "hecho.all", query = "SELECT m FROM Hecho m WHERE m.nat NOT LIKE 'M' ORDER BY m.nat"),
-    @NamedQuery(name = "hecho3.all", query = "SELECT m FROM Hecho m WHERE m.nat NOT LIKE 'M' ORDER BY m.pro")
-
+    @NamedQuery(name = "hecho3.all", query = "SELECT m FROM Hecho m WHERE m.nat NOT LIKE 'M' ORDER BY m.pro"),
+    @NamedQuery(name = "hechoPro.all", query = "SELECT m FROM Hecho m ORDER BY m.pro")
+   
 })
 @NamedQuery(name = "hecho2.all", query = "DELETE FROM Hecho")
 

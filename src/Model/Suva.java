@@ -48,7 +48,7 @@ public class Suva {
 
     public String toString() {
         if (this.tipo.equals("sujeto")) {
-            return this.sujeto.getNat();
+            return this.getSujeto().getNat() + " ("+ this.getSujeto().getCategoria().getNombre() + ")";
         } else {
             return this.variablep.getNat();
         }

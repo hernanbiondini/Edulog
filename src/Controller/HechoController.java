@@ -18,6 +18,9 @@ public class HechoController extends EntityController{
     private static final String QUERY_GET_ALL_HECHO = "hecho.all";
     private static final String QUERY_GET_ALL_HECHO3 = "hecho3.all";
     private static final String QUERY_DELETE_ALL_HECHO = "hecho2.all";
+    private static final String QUERY_GET_ALL_HECHO_PRO = "hechoPro.all";
+
+    
 
     HechoController(){}
 
@@ -46,6 +49,10 @@ public class HechoController extends EntityController{
         return this.executeNamedQuery(QUERY_GET_ALL_HECHO3);
     }
  
+    public List<Hecho> getAllHechopro(){
+        return this.executeNamedQuery(QUERY_GET_ALL_HECHO_PRO);
+    }
+    
 //public void deletetAllHecho(){
 //        this.executeNamedQuery2(QUERY_DELETE_ALL_HECHO);
 //    }
