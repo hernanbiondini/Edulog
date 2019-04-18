@@ -96,7 +96,7 @@ public class Reglas extends javax.swing.JDialog implements Globales {
             tools[j] = tooltipsText.get(j);//C
         }
 
-        this.jComboBox37.setRenderer(new Reglas.MyRenderer());
+        //this.jComboBox37.setRenderer(new Reglas.MyRenderer());
         this.jComboBox41.setRenderer(new Reglas.MyRenderer());
         this.jComboBox45.setRenderer(new Reglas.MyRenderer());
         this.jComboBox48.setRenderer(new Reglas.MyRenderer());
@@ -138,6 +138,30 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         this.jComboBox43.setRenderer(new Reglas.MyRenderer2());
         this.jComboBox46.setRenderer(new Reglas.MyRenderer2());
         this.jComboBox49.setRenderer(new Reglas.MyRenderer2());
+        
+        // Predicado
+        ArrayList<Color> colores3 = new ArrayList<Color>();
+        ArrayList<String> tooltipsText3 = new ArrayList<String>();
+       for (Object p : predicados) {
+            Predicado r = new Predicado();
+            r = (Predicado) p;
+            if (r.getTipo() == 1) {
+                tooltipsText3.add(r.getNat());//C
+                Color darkGreen = new Color(0, 75, 0);
+                colores3.add(darkGreen);
+            } else {
+                tooltipsText3.add(r.getNat());//C
+                Color darkGreen = new Color(0, 175, 0);
+                colores3.add(darkGreen);
+            }
+        }
+        colors3 = new Color[colores3.size()];
+        tools3 = new String[colores3.size()];//C
+        for (int j = 0; j < colores3.size(); j++) {
+            colors3[j] = colores3.get(j);
+            tools3[j] = tooltipsText3.get(j);//C
+        }
+        this.jComboBox37.setRenderer(new Reglas.MyRenderer3());
     }
 
     /**
@@ -1448,6 +1472,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     Color colors2[];
     String tools[];//C
     String tools2[];//C
+     Color colors3[];
+      String tools3[];//C
 
     public void refreshCombos() {
         initComponents();
@@ -1645,6 +1671,20 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         }
     }
 
+    // RENDER
+    class MyRenderer3 extends DefaultListCellRenderer {
+
+        // METODO RENDER
+        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+            JLabel lbl = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            if (index > -1) {
+                lbl.setForeground(colors3[index]);
+                lbl.setToolTipText(tools3[index]);//C
+            }
+            return lbl;
+        }
+    }
+    
     private boolean buscarPl(String predicado) {
         String codigo = new String(), path = "family.pl";
         File archivo = new File(path);

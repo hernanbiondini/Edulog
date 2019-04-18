@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Categoria;
 import Model.Predicado;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,51 +35,65 @@ public class PredicadoController extends EntityController {
     public List<Predicado> getAllPredicado() {
         return this.executeNamedQuery(QUERY_GET_ALL_PREDICADO);
     }
-    
+
     public List<Predicado> getAllPredicadoAfectado() {
-            return this.executeNamedQuery(QUERY_GET_ALL_PREDICADO_AFECTADO);
+        return this.executeNamedQuery(QUERY_GET_ALL_PREDICADO_AFECTADO);
     }
 
     public List<Predicado> getAllPredicado2() {
         this.predicados = predicadoController.getAllPredicado();
 
-        // Se cargan las primitivas de prolog
-        Predicado p1 = new Predicado();
-        p1.setNat("es igual que");
-        p1.setPro("=");
-        p1.setTipo(2);
-        predicados.add(p1);
+        Categoria c = new Categoria();
+        c.setId(4);
+        try {
+            // Se cargan las primitivas de prolog
+            Predicado p1 = new Predicado();
+            p1.setNat("es igual que");
+            p1.setPro("=");
+            p1.setTipo(2);
+            p1.setCategoria(c);
+            predicados.add(p1);
 
-        Predicado p3 = new Predicado();
-        p3.setNat("no es igual que");
-        p3.setPro("\\=");
-        p1.setTipo(2);
-        predicados.add(p3);
+            Predicado p3 = new Predicado();
+            p3.setNat("no es igual que");
+            p3.setPro("\\=");
+            p1.setTipo(2);
+            p1.setCategoria(c);
+            predicados.add(p3);
 
-        Predicado p5 = new Predicado();
-        p5.setNat("es menor que");
-        p5.setPro("<");
-        p1.setTipo(2);
-        predicados.add(p5);
+            Predicado p5 = new Predicado();
+            p5.setNat("es menor que");
+            p5.setPro("<");
+            p1.setTipo(2);
+            p1.setCategoria(c);
+            predicados.add(p5);
 
-        Predicado p6 = new Predicado();
-        p6.setNat("es mayor que");
-        p6.setPro(">");
-        p1.setTipo(2);
-        predicados.add(p6);
+            Predicado p6 = new Predicado();
+            p6.setNat("es mayor que");
+            p6.setPro(">");
+            p1.setTipo(2);
+            p1.setCategoria(c);
 
-        Predicado p2 = new Predicado();
-        p2.setNat("es igual o menor que");
-        p2.setPro("=<");
-        p1.setTipo(2);
-        predicados.add(p2);
+            predicados.add(p6);
 
-        Predicado p4 = new Predicado();
-        p4.setNat("es igual o mayor que");
-        p4.setPro("=>");
-        p1.setTipo(2);
-        predicados.add(p4);
+            Predicado p2 = new Predicado();
+            p2.setNat("es igual o menor que");
+            p2.setPro("=<");
+            p1.setTipo(2);
+            p1.setCategoria(c);
 
+            predicados.add(p2);
+
+            Predicado p4 = new Predicado();
+            p4.setNat("es igual o mayor que");
+            p4.setPro("=>");
+            p1.setTipo(2);
+            p1.setCategoria(c);
+
+            predicados.add(p4);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
         return predicados;
     }
 
