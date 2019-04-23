@@ -135,14 +135,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel1" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="jButton6" alignment="0" min="-2" pref="139" max="-2" attributes="1"/>
-                                      <Component id="jButton7" alignment="1" min="-2" max="-2" attributes="1"/>
-                                      <Component id="jButton8" alignment="0" min="-2" pref="139" max="-2" attributes="1"/>
-                                  </Group>
+                                  <Component id="jLabel1" min="-2" pref="139" max="-2" attributes="0"/>
+                                  <Component id="jButton7" min="-2" pref="153" max="-2" attributes="1"/>
                               </Group>
                               <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -168,11 +164,17 @@
                                   <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jComboBox53" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox55" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox54" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jButton8" min="-2" pref="153" max="-2" attributes="1"/>
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jComboBox53" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox55" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox54" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jButton6" min="-2" pref="153" max="-2" attributes="1"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -194,18 +196,16 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jComboBox14" alignment="0" pref="249" max="32767" attributes="1"/>
-                                                  <Component id="jComboBox11" alignment="0" max="32767" attributes="1"/>
-                                                  <Component id="jComboBox8" alignment="0" max="32767" attributes="1"/>
-                                              </Group>
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jComboBox14" alignment="0" pref="249" max="32767" attributes="1"/>
+                                              <Component id="jComboBox11" alignment="0" max="32767" attributes="1"/>
+                                              <Component id="jComboBox8" alignment="0" max="32767" attributes="1"/>
                                           </Group>
                                           <Component id="jComboBox5" max="32767" attributes="1"/>
                                       </Group>
