@@ -862,9 +862,23 @@ public class Consultas extends javax.swing.JDialog {
                 for (int i = 0; i < s.length; i++) {
                     String[] claves = (String[]) s[i].keySet().toArray(new String[0]);
                     java.util.Arrays.sort(claves);
-                    for (String clave : claves) {
-                        respuestaMultiple = respuestaMultiple + (clave + ":" + s[i].get(clave) + " ");
+                    
+//                    for (String clave : claves) {
+//                        respuestaMultiple = respuestaMultiple + (clave + ":" + s[i].get(clave) + " ");
+//                    }
+                    
+
+
+                    String resp = "";
+                    for (String clave : claves) {                      
+                        resp = clave + ":" + s[i].get(clave);
+                        if (respuestaMultiple.contains(resp)==false) {
+                            respuestaMultiple = respuestaMultiple + (resp + " ");
+                        }
                     }
+                    
+                    
+                    
                     if (respuestaMultiple.equals("") == false) {
                         respuestaMultiple = respuestaMultiple + ",  ";
                     }

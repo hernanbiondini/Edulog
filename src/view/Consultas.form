@@ -207,7 +207,7 @@
                                               <Component id="jComboBox11" alignment="0" max="32767" attributes="1"/>
                                               <Component id="jComboBox8" alignment="0" max="32767" attributes="1"/>
                                           </Group>
-                                          <Component id="jComboBox5" max="32767" attributes="1"/>
+                                          <Component id="jComboBox5" pref="249" max="32767" attributes="1"/>
                                       </Group>
                                   </Group>
                                   <Component id="jLabel10" alignment="0" pref="994" max="32767" attributes="0"/>
