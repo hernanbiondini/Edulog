@@ -870,18 +870,24 @@ public class Consultas extends javax.swing.JDialog {
 
 
                     String resp = "";
+                    boolean bandera = false;
                     for (String clave : claves) {                      
                         resp = clave + ":" + s[i].get(clave);
                         if (respuestaMultiple.contains(resp)==false) {
                             respuestaMultiple = respuestaMultiple + (resp + " ");
+                            bandera = true;
                         }
                     }
                     
                     
                     
                     if (respuestaMultiple.equals("") == false) {
-                        respuestaMultiple = respuestaMultiple + ",  ";
+                        if(bandera){
+                            respuestaMultiple = respuestaMultiple + ",  ";
+                        }
                     }
+                    
+                    
                 }
                 if (respuestaMultiple.length() > 3) {
                     respuestaMultiple = respuestaMultiple.substring(0, respuestaMultiple.length() - 3);
