@@ -66,6 +66,16 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         this.jComboBox50.setEnabled(false);
         this.jComboBox51.setEnabled(false);
 
+        this.jComboBox55.setEnabled(false);
+        this.jComboBox56.setEnabled(false);
+        this.jComboBox57.setEnabled(false);
+        this.jComboBox58.setEnabled(false);
+
+        this.jComboBox59.setEnabled(false);
+        this.jComboBox60.setEnabled(false);
+        this.jComboBox61.setEnabled(false);
+        this.jComboBox62.setEnabled(false);
+
         // Regla - Predicado
         ArrayList<Color> colores = new ArrayList<Color>();
         ArrayList<String> tooltipsText = new ArrayList<String>();
@@ -101,6 +111,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         this.jComboBox45.setRenderer(new Reglas.MyRenderer());
         this.jComboBox48.setRenderer(new Reglas.MyRenderer());
         this.jComboBox51.setRenderer(new Reglas.MyRenderer());
+        this.jComboBox57.setRenderer(new Reglas.MyRenderer());
+        this.jComboBox61.setRenderer(new Reglas.MyRenderer());
 
         // Sujeto - Variables
         ArrayList<Color> colores2 = new ArrayList<Color>();
@@ -138,11 +150,15 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         this.jComboBox43.setRenderer(new Reglas.MyRenderer2());
         this.jComboBox46.setRenderer(new Reglas.MyRenderer2());
         this.jComboBox49.setRenderer(new Reglas.MyRenderer2());
-        
+        this.jComboBox56.setRenderer(new Reglas.MyRenderer2());
+        this.jComboBox58.setRenderer(new Reglas.MyRenderer2());
+        this.jComboBox60.setRenderer(new Reglas.MyRenderer2());
+        this.jComboBox62.setRenderer(new Reglas.MyRenderer2());
+
         // Predicado
         ArrayList<Color> colores3 = new ArrayList<Color>();
         ArrayList<String> tooltipsText3 = new ArrayList<String>();
-       for (Object p : predicados) {
+        for (Object p : predicados) {
             Predicado r = new Predicado();
             r = (Predicado) p;
             if (r.getTipo() == 1) {
@@ -196,6 +212,12 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         suva8 = new Model.Suva();
         suva9 = new Model.Suva();
         suva10 = new Model.Suva();
+        suva11 = new Model.Suva();
+        suva12 = new Model.Suva();
+        suva13 = new Model.Suva();
+        suva14 = new Model.Suva();
+        repre6 = new Model.Repre();
+        repre7 = new Model.Repre();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton13 = new javax.swing.JButton();
@@ -238,6 +260,16 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
+        jComboBox55 = new javax.swing.JComboBox();
+        jComboBox56 = new javax.swing.JComboBox();
+        jComboBox57 = new javax.swing.JComboBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jComboBox58 = new javax.swing.JComboBox();
+        jComboBox59 = new javax.swing.JComboBox();
+        jComboBox60 = new javax.swing.JComboBox();
+        jComboBox61 = new javax.swing.JComboBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jComboBox62 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reglas");
@@ -397,6 +429,11 @@ public class Reglas extends javax.swing.JDialog implements Globales {
                 jComboBox45ItemStateChanged(evt);
             }
         });
+        jComboBox45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox45ActionPerformed(evt);
+            }
+        });
 
         jComboBox46.setMaximumRowCount(25);
 
@@ -432,12 +469,24 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva10, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox49, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
 
+        jComboBox49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox49ActionPerformed(evt);
+            }
+        });
+
         jComboBox50.setMaximumRowCount(25);
 
         jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suvas, jComboBox50);
         bindingGroup.addBinding(jComboBoxBinding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva9, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox50, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
+
+        jComboBox50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox50ActionPerformed(evt);
+            }
+        });
 
         jComboBox51.setMaximumRowCount(25);
 
@@ -464,6 +513,11 @@ public class Reglas extends javax.swing.JDialog implements Globales {
                 jComboBox52ItemStateChanged(evt);
             }
         });
+        jComboBox52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox52ActionPerformed(evt);
+            }
+        });
 
         jComboBox53.setMaximumRowCount(3);
         jComboBox53.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".", "Y", "O" }));
@@ -478,6 +532,11 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         jComboBox54.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox54ItemStateChanged(evt);
+            }
+        });
+        jComboBox54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox54ActionPerformed(evt);
             }
         });
 
@@ -547,6 +606,11 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         jCheckBox3.setText("Negación");
 
         jCheckBox4.setText("Negación");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -563,100 +627,248 @@ public class Reglas extends javax.swing.JDialog implements Globales {
             }
         });
 
+        jComboBox55.setMaximumRowCount(3);
+        jComboBox55.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".", "Y", "O" }));
+        jComboBox55.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox55ItemStateChanged(evt);
+            }
+        });
+        jComboBox55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox55ActionPerformed(evt);
+            }
+        });
+
+        jComboBox56.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suvas, jComboBox56);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva11, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox56, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox57.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, repres, jComboBox57);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, repre6, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox57, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox57.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox57ItemStateChanged(evt);
+            }
+        });
+        jComboBox57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox57ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox5.setText("Negación");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
+
+        jComboBox58.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suvas, jComboBox58);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva12, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox58, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox58ActionPerformed(evt);
+            }
+        });
+
+        jComboBox59.setMaximumRowCount(3);
+        jComboBox59.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".", "Y", "O" }));
+        jComboBox59.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox59ItemStateChanged(evt);
+            }
+        });
+        jComboBox59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox59ActionPerformed(evt);
+            }
+        });
+
+        jComboBox60.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suvas, jComboBox60);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva13, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox60, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox60ActionPerformed(evt);
+            }
+        });
+
+        jComboBox61.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, repres, jComboBox61);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, repre7, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox61, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox61.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox61ItemStateChanged(evt);
+            }
+        });
+        jComboBox61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox61ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox6.setText("Negación");
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
+
+        jComboBox62.setMaximumRowCount(25);
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suvas, jComboBox62);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, suva14, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox62, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        jComboBox62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox62ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(330, 330, 330)
-                                .addComponent(jLabel34)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton13)
-                                    .addComponent(jButton4)
-                                    .addComponent(jButton5))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                        .addComponent(jScrollPane2)))
+                .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox37, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(jComboBox39, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
                         .addComponent(jLabel3)
-                        .addGap(178, 178, 178)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(185, 185, 185)
-                        .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(219, 219, 219)
+                        .addComponent(jLabel5)
+                        .addGap(94, 94, 94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(12, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox37, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox39, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox54, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox52, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox53, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox40, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox44, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox47, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox50, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox56, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox60, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(105, 105, 105)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(jCheckBox1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel8))
+                            .addComponent(jComboBox41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBox50, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox47, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox40, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(68, 68, 68)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel8))
-                    .addComponent(jComboBox51, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox49, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox46, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBox42, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(148, 148, 148))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(113, 113, 113))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(89, 89, 89)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                            .addComponent(jCheckBox4)
+                                            .addComponent(jCheckBox3)
+                                            .addComponent(jCheckBox2)))
+                                    .addComponent(jComboBox51, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox49, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox46, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(89, 89, 89)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                            .addComponent(jCheckBox6)
+                                            .addComponent(jCheckBox5)))
+                                    .addComponent(jComboBox61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox62, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox58, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(49, 49, 49))))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGap(533, 533, 533)
+                .addComponent(jLabel34)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -666,77 +878,97 @@ public class Reglas extends javax.swing.JDialog implements Globales {
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7)
                             .addComponent(jCheckBox1)
                             .addComponent(jLabel8)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel7))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                            .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jCheckBox2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jComboBox45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jCheckBox3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jComboBox47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jCheckBox4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jComboBox50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jCheckBox5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8)
-                        .addComponent(jCheckBox4)
+                            .addComponent(jComboBox56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jCheckBox6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jComboBox60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(jLabel1)
+                        .addGap(51, 51, 51)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton5)
                         .addGap(18, 18, 18)
                         .addComponent(jButton13)
-                        .addGap(15, 15, 15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton14)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton4)))
+                .addContainerGap())
         );
 
         jComboBox51.getAccessibleContext().setAccessibleName("");
@@ -1108,6 +1340,148 @@ public class Reglas extends javax.swing.JDialog implements Globales {
                             }
                         }
 
+                        //------------------------------------------------ Cuerpo 5 ----------------------------------------------------
+                        repre6 = (Repre) jComboBox57.getSelectedItem();
+                        suva11 = (Suva) jComboBox56.getSelectedItem();
+                        suva12 = (Suva) jComboBox58.getSelectedItem();
+
+                        String union4 = jComboBox55.getSelectedItem().toString();
+                        String union4p = "";
+
+                        if (union4.equalsIgnoreCase("Y")) {
+                            union4p = ",";
+                        }
+                        if (union4.equalsIgnoreCase("O")) {
+                            union4p = ";";
+                        }
+
+                        union4 = union4.toLowerCase();
+
+                        if (union4.equalsIgnoreCase(".") == false) {
+
+                            Buffer f11 = new Buffer();
+                            if (suva11.getTipo().equals("variablep")) {
+                                f11.setNat(suva11.getVariablep().getNat());
+                                f11.setPro(suva11.getVariablep().getPro());
+                            } else {
+                                f11.setNat(suva11.getSujeto().getNat());
+                                f11.setPro(suva11.getSujeto().getPro());
+                            }
+
+                            Buffer f12 = new Buffer();
+                            if (suva12.getTipo().equals("variablep")) {
+                                f12.setNat(suva12.getVariablep().getNat());
+                                f12.setPro(suva12.getVariablep().getPro());
+                            } else {
+                                f12.setNat(suva12.getSujeto().getNat());
+                                f12.setPro(suva12.getSujeto().getPro());
+                            }
+
+                            jTextArea1.setText(jTextArea1.getText() + "  ''" + union4 + "''  ");
+                            consulta = consulta + union4p;
+
+                            // Logica negación
+                            String conectorN5 = " ";
+                            String conectorP5 = "";
+                            String conectorPC5 = "";
+                            if (this.jCheckBox5.isSelected()) {
+                                conectorN5 = " NO ";
+                                conectorP5 = "not(";
+                                conectorPC5 = ")";
+                                if (repre6.getTipo().equals("regla")) {
+                                    conectorN5 = "  NO  ES CIERTO QUE  ";
+                                } else {
+                                    conectorN5 = "  NO  ";
+                                }
+                                conectorP5 = "not(";
+                                conectorPC5 = ")";
+                            }
+                            if (repre6.getTipo().equals("regla")) {
+                                jTextArea1.setText(jTextArea1.getText() + conectorN5 + repre6.getRegla().getNombre());
+                                consulta = consulta + conectorP5 + repre6.getRegla().getNombrePro() + conectorPC5;
+                            } else {
+                                if (repre6.getPredicado().getTipo() == 1) {
+                                    jTextArea1.setText(jTextArea1.getText() + f11.getNat() + conectorN5 + repre6.getPredicado().getNat());
+                                    consulta = consulta + conectorP5 + repre6.getPredicado().getPro() + "(" + f11.getPro() + ")" + conectorPC5;
+                                } else {
+                                    jTextArea1.setText(jTextArea1.getText() + f11.getNat() + conectorN5 + repre6.getPredicado().getNat() + " " + f12.getNat());
+                                    consulta = consulta + conectorP5 + repre6.getPredicado().getPro() + "(" + f11.getPro() + "," + f12.getPro() + ")" + conectorPC5;
+                                }
+                            }
+
+                        }
+
+                        //------------------------------------------------ Cuerpo 6 ----------------------------------------------------
+                        repre7 = (Repre) jComboBox61.getSelectedItem();
+                        suva13 = (Suva) jComboBox60.getSelectedItem();
+                        suva14 = (Suva) jComboBox62.getSelectedItem();
+
+                        String union5 = jComboBox59.getSelectedItem().toString();
+                        String union5p = "";
+
+                        if (union5.equalsIgnoreCase("Y")) {
+                            union5p = ",";
+                        }
+                        if (union5.equalsIgnoreCase("O")) {
+                            union5p = ";";
+                        }
+
+                        union5 = union5.toLowerCase();
+
+                        if (union5.equalsIgnoreCase(".") == false) {
+
+                            Buffer f13 = new Buffer();
+                            if (suva13.getTipo().equals("variablep")) {
+                                f13.setNat(suva13.getVariablep().getNat());
+                                f13.setPro(suva13.getVariablep().getPro());
+                            } else {
+                                f13.setNat(suva13.getSujeto().getNat());
+                                f13.setPro(suva13.getSujeto().getPro());
+                            }
+
+                            Buffer f14 = new Buffer();
+                            if (suva14.getTipo().equals("variablep")) {
+                                f14.setNat(suva14.getVariablep().getNat());
+                                f14.setPro(suva14.getVariablep().getPro());
+                            } else {
+                                f14.setNat(suva14.getSujeto().getNat());
+                                f14.setPro(suva14.getSujeto().getPro());
+                            }
+
+                            jTextArea1.setText(jTextArea1.getText() + "  ''" + union5 + "''  ");
+                            consulta = consulta + union5p;
+
+                            // Logica negación
+                            String conectorN6 = " ";
+                            String conectorP6 = "";
+                            String conectorPC6 = "";
+                            if (this.jCheckBox6.isSelected()) {
+                                conectorN6 = " NO ";
+                                conectorP6 = "not(";
+                                conectorPC6 = ")";
+                                if (repre7.getTipo().equals("regla")) {
+                                    conectorN6 = "  NO  ES CIERTO QUE  ";
+                                } else {
+                                    conectorN6 = "  NO  ";
+                                }
+                                conectorP6 = "not(";
+                                conectorPC6 = ")";
+                            }
+                            if (repre7.getTipo().equals("regla")) {
+                                jTextArea1.setText(jTextArea1.getText() + conectorN6 + repre7.getRegla().getNombre());
+                                consulta = consulta + conectorP6 + repre7.getRegla().getNombrePro() + conectorPC6;
+                            } else {
+                                if (repre7.getPredicado().getTipo() == 1) {
+                                    jTextArea1.setText(jTextArea1.getText() + f13.getNat() + conectorN6 + repre7.getPredicado().getNat());
+                                    consulta = consulta + conectorP6 + repre6.getPredicado().getPro() + "(" + f13.getPro() + ")" + conectorPC6;
+                                } else {
+                                    jTextArea1.setText(jTextArea1.getText() + f13.getNat() + conectorN6 + repre7.getPredicado().getNat() + " " + f14.getNat());
+                                    consulta = consulta + conectorP6 + repre7.getPredicado().getPro() + "(" + f13.getPro() + "," + f14.getPro() + ")" + conectorPC6;
+                                }
+                            }
+
+                        }
+
                     } // 3
                 } // 2
             } // 1
@@ -1250,6 +1624,7 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         this.jComboBox49.setEnabled(true);
         this.jComboBox50.setEnabled(true);
         this.jComboBox51.setEnabled(true);
+        this.jComboBox55.setEnabled(true);
         String union1 = jComboBox54.getSelectedItem().toString();
         if (union1.equalsIgnoreCase(".")) {
             this.jComboBox49.setEnabled(false);
@@ -1397,6 +1772,129 @@ public class Reglas extends javax.swing.JDialog implements Globales {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox51ActionPerformed
 
+    private void jComboBox54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox54ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox54ActionPerformed
+
+    private void jComboBox55ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox55ItemStateChanged
+        this.jComboBox56.setEnabled(true);
+        this.jComboBox57.setEnabled(true);
+        this.jComboBox58.setEnabled(true);
+        this.jComboBox59.setEnabled(true);
+        String union1 = jComboBox55.getSelectedItem().toString();
+        if (union1.equalsIgnoreCase(".")) {
+            this.jComboBox56.setEnabled(false);
+            this.jComboBox57.setEnabled(false);
+            this.jComboBox58.setEnabled(false);
+        } else {
+            Repre re = new Repre();
+            re = (Repre) jComboBox57.getSelectedItem();
+            if (re.getTipo().equals("regla")) {
+                this.jComboBox56.setEnabled(false);
+                //this.jComboBox50.setVisible(false);
+                this.jComboBox58.setEnabled(false);
+                //this.jComboBox49.setVisible(false);
+            } else {
+                if (re.getPredicado().getTipo() == 1) {
+                    this.jComboBox58.setEnabled(false);
+                    //this.jComboBox49.setVisible(false);
+                } else {
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox55ItemStateChanged
+
+    private void jComboBox57ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox57ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox57ItemStateChanged
+
+    private void jComboBox59ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox59ItemStateChanged
+        this.jComboBox60.setEnabled(true);
+        this.jComboBox61.setEnabled(true);
+        this.jComboBox62.setEnabled(true);
+        String union1 = jComboBox59.getSelectedItem().toString();
+        if (union1.equalsIgnoreCase(".")) {
+            this.jComboBox60.setEnabled(false);
+            this.jComboBox61.setEnabled(false);
+            this.jComboBox62.setEnabled(false);
+        } else {
+            Repre re = new Repre();
+            re = (Repre) jComboBox61.getSelectedItem();
+            if (re.getTipo().equals("regla")) {
+                this.jComboBox60.setEnabled(false);
+                //this.jComboBox50.setVisible(false);
+                this.jComboBox62.setEnabled(false);
+                //this.jComboBox49.setVisible(false);
+            } else {
+                if (re.getPredicado().getTipo() == 1) {
+                    this.jComboBox62.setEnabled(false);
+                    //this.jComboBox49.setVisible(false);
+                } else {
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox59ItemStateChanged
+
+    private void jComboBox59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox59ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox59ActionPerformed
+
+    private void jComboBox61ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox61ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox61ItemStateChanged
+
+    private void jComboBox61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox61ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox61ActionPerformed
+
+    private void jComboBox60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox60ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox60ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jComboBox62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox62ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox62ActionPerformed
+
+    private void jComboBox58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox58ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox58ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jComboBox50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox50ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox50ActionPerformed
+
+    private void jComboBox49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox49ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox49ActionPerformed
+
+    private void jComboBox57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox57ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox57ActionPerformed
+
+    private void jComboBox45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox45ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox45ActionPerformed
+
+    private void jComboBox52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox52ActionPerformed
+
+    private void jComboBox55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox55ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox55ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton13;
@@ -1409,6 +1907,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JComboBox jComboBox36;
     private javax.swing.JComboBox jComboBox37;
     private javax.swing.JComboBox jComboBox38;
@@ -1428,6 +1928,14 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     private javax.swing.JComboBox jComboBox52;
     private javax.swing.JComboBox jComboBox53;
     private javax.swing.JComboBox jComboBox54;
+    private javax.swing.JComboBox jComboBox55;
+    private javax.swing.JComboBox jComboBox56;
+    private javax.swing.JComboBox jComboBox57;
+    private javax.swing.JComboBox jComboBox58;
+    private javax.swing.JComboBox jComboBox59;
+    private javax.swing.JComboBox jComboBox60;
+    private javax.swing.JComboBox jComboBox61;
+    private javax.swing.JComboBox jComboBox62;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel34;
@@ -1449,9 +1957,15 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     private Model.Repre repre3;
     private Model.Repre repre4;
     private Model.Repre repre5;
+    private Model.Repre repre6;
+    private Model.Repre repre7;
     private java.util.List repres;
     private Model.Suva suva1;
     private Model.Suva suva10;
+    private Model.Suva suva11;
+    private Model.Suva suva12;
+    private Model.Suva suva13;
+    private Model.Suva suva14;
     private Model.Suva suva2;
     private Model.Suva suva3;
     private Model.Suva suva4;
@@ -1472,8 +1986,8 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     Color colors2[];
     String tools[];//C
     String tools2[];//C
-     Color colors3[];
-      String tools3[];//C
+    Color colors3[];
+    String tools3[];//C
 
     public void refreshCombos() {
         initComponents();
@@ -1684,7 +2198,7 @@ public class Reglas extends javax.swing.JDialog implements Globales {
             return lbl;
         }
     }
-    
+
     private boolean buscarPl(String predicado) {
         String codigo = new String(), path = "family.pl";
         File archivo = new File(path);
@@ -1698,7 +2212,7 @@ public class Reglas extends javax.swing.JDialog implements Globales {
                 codigo = entrada.readLine();
                 if (codigo.contains(":-")) {
                     int c = codigo.indexOf(":-");
-                    String cabeza = codigo.substring(0,c);
+                    String cabeza = codigo.substring(0, c);
                     System.out.println("cabeza: " + cabeza);
                     if (cabeza.contains(predicado)) {
                         encontrado = true;
