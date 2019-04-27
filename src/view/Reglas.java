@@ -1805,7 +1805,24 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     }//GEN-LAST:event_jComboBox55ItemStateChanged
 
     private void jComboBox57ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox57ItemStateChanged
-        // TODO add your handling code here:
+        // TODO add your handling code here: this.jComboBox50.setEnabled(true);
+        //this.jComboBox50.setVisible(true);
+        this.jComboBox58.setEnabled(true);
+        //this.jComboBox49.setVisible(true);
+        Repre re = new Repre();
+        re = (Repre) jComboBox57.getSelectedItem();
+        if (re.getTipo().equals("regla")) {
+            this.jComboBox56.setEnabled(false);
+            //this.jComboBox50.setVisible(false);
+            this.jComboBox58.setEnabled(false);
+            //this.jComboBox49.setVisible(false);
+        } else {
+            if (re.getPredicado().getTipo() == 1) {
+                this.jComboBox58.setEnabled(false);
+                //this.jComboBox49.setVisible(false);
+            } else {
+            }
+        }
     }//GEN-LAST:event_jComboBox57ItemStateChanged
 
     private void jComboBox59ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox59ItemStateChanged
@@ -1840,7 +1857,24 @@ public class Reglas extends javax.swing.JDialog implements Globales {
     }//GEN-LAST:event_jComboBox59ActionPerformed
 
     private void jComboBox61ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox61ItemStateChanged
-        // TODO add your handling code here:
+       // TODO add your handling code here: this.jComboBox50.setEnabled(true);
+        //this.jComboBox50.setVisible(true);
+        this.jComboBox62.setEnabled(true);
+        //this.jComboBox49.setVisible(true);
+        Repre re = new Repre();
+        re = (Repre) jComboBox61.getSelectedItem();
+        if (re.getTipo().equals("regla")) {
+            this.jComboBox60.setEnabled(false);
+            //this.jComboBox50.setVisible(false);
+            this.jComboBox62.setEnabled(false);
+            //this.jComboBox49.setVisible(false);
+        } else {
+            if (re.getPredicado().getTipo() == 1) {
+                this.jComboBox62.setEnabled(false);
+                //this.jComboBox49.setVisible(false);
+            } else {
+            }
+        }
     }//GEN-LAST:event_jComboBox61ItemStateChanged
 
     private void jComboBox61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox61ActionPerformed
