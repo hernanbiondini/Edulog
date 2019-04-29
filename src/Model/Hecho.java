@@ -36,6 +36,8 @@ public class Hecho implements Cloneable, Serializable {
     private int id;
     private String nat;
     private String pro;
+    @Column(name = "externo", nullable = false, length = 1)
+    private int externo;
 
     public Hecho() {
     }
@@ -64,6 +66,14 @@ public class Hecho implements Cloneable, Serializable {
         this.pro = pro;
     }
 
+    public int getExterno() {
+        return externo;
+    }
+
+    public void setExterno(int externo) {
+        this.externo = externo;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

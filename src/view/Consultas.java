@@ -138,13 +138,12 @@ public class Consultas extends javax.swing.JDialog {
         this.jComboBox12.setRenderer(new Consultas.MyRenderer2());
         this.jComboBox14.setRenderer(new Consultas.MyRenderer2());
 
-        
-        
-         // Se vuelve a escribir el .pl leyendo hechos y reglas de la base de datos
+        // Se vuelve a escribir el .pl leyendo hechos y reglas de la base de datos
         consistencia();
+        this.conf();
         // Se lee el contenido del .pl recien escrito
         //leerPl();
-       
+
     }
 
     /**
@@ -831,8 +830,23 @@ public class Consultas extends javax.swing.JDialog {
         jTextArea2.setText(".");
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    public String getServicio_externo() {
+        return servicio_externo;
+    }
 
+    public void setServicio_externo(String servicio_externo) {
+        this.servicio_externo = servicio_externo;
+    }
+
+    public String getUrl_servicio_externo() {
+        return url_servicio_externo;
+    }
+
+    public void setUrl_servicio_externo(String url_servicio_externo) {
+        this.url_servicio_externo = url_servicio_externo;
+    }
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         jTextArea2.setForeground(Color.BLACK);
         if (jTextArea1.getText().equalsIgnoreCase(".")) {
             Icon Imagen;
@@ -847,11 +861,14 @@ public class Consultas extends javax.swing.JDialog {
             }
             JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
         } else {
-
+            
             jTextArea2.setText("");
             Consulta c = new Consulta();
 
             try {
+
+                procesarHechosExternos();
+
                 String respuestaUnica = "";
                 String respuestaMultiple = "";
                 String respuestaFinal = "";
@@ -862,32 +879,26 @@ public class Consultas extends javax.swing.JDialog {
                 for (int i = 0; i < s.length; i++) {
                     String[] claves = (String[]) s[i].keySet().toArray(new String[0]);
                     java.util.Arrays.sort(claves);
-                    
+
 //                    for (String clave : claves) {
 //                        respuestaMultiple = respuestaMultiple + (clave + ":" + s[i].get(clave) + " ");
 //                    }
-                    
-
-
                     String resp = "";
                     boolean bandera = false;
-                    for (String clave : claves) {                      
+                    for (String clave : claves) {
                         resp = clave + ":" + s[i].get(clave);
-                        if (respuestaMultiple.contains(resp)==false) {
+                        if (respuestaMultiple.contains(resp) == false) {
                             respuestaMultiple = respuestaMultiple + (resp + " ");
                             bandera = true;
                         }
                     }
-                    
-                    
-                    
+
                     if (respuestaMultiple.equals("") == false) {
-                        if(bandera){
+                        if (bandera) {
                             respuestaMultiple = respuestaMultiple + ",  ";
                         }
                     }
-                    
-                    
+
                 }
                 if (respuestaMultiple.length() > 3) {
                     respuestaMultiple = respuestaMultiple.substring(0, respuestaMultiple.length() - 3);
@@ -1425,10 +1436,16 @@ public class Consultas extends javax.swing.JDialog {
     private String exito = "";
     private String errorBase = "";
     private String error = "";
+    private String servicio_externo = "";
+    private String url_servicio_externo = "";
     Color colors[];
     Color colors2[];
     String tools[];//C
     String tools2[];//C
+    private static File archivo = null;
+    private static FileReader fr = null;
+    private static BufferedReader br = null;
+    private static String hecho = null;
 
     private void cambio() throws FileNotFoundException, IOException {
         Properties p = new Properties();
@@ -1473,8 +1490,9 @@ public class Consultas extends javax.swing.JDialog {
             return lbl;
         }
     }
-    
+
     private String modo = "";
+
     private void leerPl() {
         String codigo = new String(), path = "family.pl";
         File archivo = new File(path);
@@ -1487,9 +1505,9 @@ public class Consultas extends javax.swing.JDialog {
 
             while (entrada.ready()) {
                 codigo += entrada.readLine();
-                codigo = codigo +"\n";
+                codigo = codigo + "\n";
             }
-           // jTextArea4.setText(codigo);
+            // jTextArea4.setText(codigo);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -1502,6 +1520,7 @@ public class Consultas extends javax.swing.JDialog {
             }
         }
     }
+
     public void consistencia() {
         String consulta = "";
         // Se borra el archivo .pl
@@ -1578,5 +1597,73 @@ public class Consultas extends javax.swing.JDialog {
             System.out.println("Exception: " + e.getMessage());
         }
     }
-   
+
+    public void conf() {
+        try {
+            Properties p = new Properties();
+            p.load(new FileInputStream("conf.ini"));
+            this.setServicio_externo(p.getProperty("servicio_externo"));
+            this.setUrl_servicio_externo(p.getProperty("url_servicio_externo"));
+        } catch (Exception e) {
+            System.out.println("Error Configuracion: " + e);
+        }
+    }
+
+    // Consultar ws, si hubo respuesta sigo
+    // Borro hechos externos antiguos
+    // Leo archivo y escribo hechos nuevos
+    private void procesarHechosExternos() {
+        System.out.println("procesarHechosExternos");
+        if (this.getServicio_externo().equals("SI")) {
+            HechoController.getInstance().borrarAllHechoExterno();
+            leer();
+        }
+    }
+
+    private static void leer() {
+        System.out.println("leer");
+        try {
+            archivo = new File("datos.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String linea;
+            Hecho hecho1 = new Hecho();
+            while ((linea = br.readLine()) != null) {
+                //System.out.println("Linea: " + linea);
+                hecho1 = procesarString(linea);
+                HechoController.getInstance().guardar(hecho1);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != fr) {
+                    fr.close();
+                }
+            } catch (Exception e2) {
+                System.out.println("Exception: " + e2.getMessage());
+                e2.printStackTrace();
+            }
+        }
+    }
+
+    private static Hecho procesarString(String linea) {
+        String respuesta = "";
+        Hecho hecho0 = new Hecho();
+        String[] parts = linea.split("=");
+        String part1 = parts[0]; // 123
+        String part2 = parts[1]; // 654321
+        String conector = "es_valor_de";
+        respuesta = conector + "(" + part2 + "," + part1 + ")";
+        System.out.println("Hecho: " + respuesta);
+        hecho0.setPro(respuesta);
+        conector = conector.replace("_", " ");
+        respuesta = part2 + " " + conector + " " + part1;
+        System.out.println("Hecho: " + respuesta);
+        hecho0.setNat(respuesta);
+        hecho0.setExterno(1);
+        return hecho0;
+    }
+
 }

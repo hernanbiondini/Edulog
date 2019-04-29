@@ -61,6 +61,10 @@ public class HechoController extends EntityController{
         this.borrarAllHecho();
     }
     
+   public void borrarAllHechoExterno(){
+        this.borrarAllHecho();
+    }
+   
    public List<Hecho> getHechosManuales(){
         EntityManager em = this.getEntityManager();
         Query q = (Query) em.createQuery("SELECT c FROM Hecho c WHERE c.nat = 'M'");

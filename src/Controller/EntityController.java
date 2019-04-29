@@ -250,6 +250,22 @@ public abstract class EntityController {
         }
 
     }
+    
+    protected void borrarAllHechoExterno() {
+
+        EntityManager em = this.getEntityManager();
+        em.getTransaction().begin();
+        try {
+            Query query = em.createQuery("DELETE FROM Hecho h where h.externo = 1");
+            int deleteRecors = query.executeUpdate();
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+
+    }
 
     protected void borrarAllRegla() {
 

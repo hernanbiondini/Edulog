@@ -1,0 +1,3 @@
+temperatura=21.0
+humedad=69.0
+viento=7.0
