@@ -861,7 +861,7 @@ public class Consultas extends javax.swing.JDialog {
             }
             JOptionPane.showMessageDialog(this, "Por favor forme una consulta!", "Atención", JOptionPane.ERROR_MESSAGE, Imagen);
         } else {
-            
+
             jTextArea2.setText("");
             Consulta c = new Consulta();
 
@@ -1615,6 +1615,8 @@ public class Consultas extends javax.swing.JDialog {
     private void procesarHechosExternos() {
         System.out.println("procesarHechosExternos");
         if (this.getServicio_externo().equals("SI")) {
+            // Ejecutar modulo externo
+            ejecutarModuloExterno();
             HechoController.getInstance().borrarAllHechoExterno();
             leer();
         }
@@ -1664,6 +1666,22 @@ public class Consultas extends javax.swing.JDialog {
         hecho0.setNat(respuesta);
         hecho0.setExterno(1);
         return hecho0;
+    }
+
+    private void ejecutarModuloExterno() {
+        String urlSe = this.getUrl_servicio_externo();
+        // /home/hernanbiondini/NetBeansProjects/EjecutaJarExterno/modulos_externos/WSweatherunlocked.jar
+        System.out.println("url_servicio_externo: " + urlSe);//WSweatherunlocked.jar
+        try {
+            String path = new File(".").getCanonicalPath();
+            String url = path + "/modulos_externos/"+urlSe;
+            String comando = "java -jar " + url;
+            System.out.println("url: " + url);
+            System.out.println("comando: " + comando);
+            Runtime.getRuntime().exec(comando);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
     }
 
 }
