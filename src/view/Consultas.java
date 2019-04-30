@@ -1651,6 +1651,7 @@ public class Consultas extends javax.swing.JDialog {
     }
 
     private static Hecho procesarString(String linea) {
+        System.out.println("procesarString");
         String respuesta = "";
         Hecho hecho0 = new Hecho();
         String[] parts = linea.split("=");
@@ -1671,14 +1672,13 @@ public class Consultas extends javax.swing.JDialog {
     private void ejecutarModuloExterno() {
         String urlSe = this.getUrl_servicio_externo();
         // /home/hernanbiondini/NetBeansProjects/EjecutaJarExterno/modulos_externos/WSweatherunlocked.jar
-        System.out.println("url_servicio_externo: " + urlSe);//WSweatherunlocked.jar
-        try {
+        System.out.println("url_servicio_externo: " + urlSe);//modulos_externos/WSweatherunlocked.jar
+        try { 
             String path = new File(".").getCanonicalPath();
-            String url = path + "/modulos_externos/"+urlSe;
-            String comando = "java -jar " + url;
+            String url = path + urlSe;
             System.out.println("url: " + url);
-            System.out.println("comando: " + comando);
-            Runtime.getRuntime().exec(comando);
+            String[] cmd = {"java", "-jar", url};
+            Runtime.getRuntime().exec(cmd);       
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }
