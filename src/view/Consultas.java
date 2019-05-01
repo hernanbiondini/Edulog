@@ -1601,7 +1601,7 @@ public class Consultas extends javax.swing.JDialog {
     public void conf() {
         try {
             Properties p = new Properties();
-            p.load(new FileInputStream("conf.ini"));
+            p.load(new FileInputStream("conf.txt"));
             this.setServicio_externo(p.getProperty("servicio_externo"));
             this.setUrl_servicio_externo(p.getProperty("url_servicio_externo"));
         } catch (Exception e) {
@@ -1613,27 +1613,39 @@ public class Consultas extends javax.swing.JDialog {
     // Borro hechos externos antiguos
     // Leo archivo y escribo hechos nuevos
     private void procesarHechosExternos() {
-        System.out.println("procesarHechosExternos");
         if (this.getServicio_externo().equals("SI")) {
             // Ejecutar modulo externo
             ejecutarModuloExterno();
-            HechoController.getInstance().borrarAllHechoExterno();
-            leer();
+            try {
+                Thread.sleep(1000);
+                HechoController.getInstance().borrarAllHechoExterno();
+                leer();
+                consistencia();
+            } catch (InterruptedException ex) {
+                System.out.println("InterruptedException: " + ex.getMessage());
+                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception e) {
+                System.out.println("InterruptedException: " + e.getMessage());
+                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, e);
+            }
         }
     }
 
     private static void leer() {
-        System.out.println("leer");
         try {
             archivo = new File("datos.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
             String linea;
             Hecho hecho1 = new Hecho();
+            int cont = 0;
             while ((linea = br.readLine()) != null) {
-                //System.out.println("Linea: " + linea);
-                hecho1 = procesarString(linea);
-                HechoController.getInstance().guardar(hecho1);
+                if (cont > 0) {
+                    System.out.println("Linea: " + linea);
+                    hecho1 = procesarString(linea);
+                    HechoController.getInstance().guardar(hecho1);
+                }
+                cont = cont + 1;
             }
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
@@ -1651,34 +1663,34 @@ public class Consultas extends javax.swing.JDialog {
     }
 
     private static Hecho procesarString(String linea) {
-        System.out.println("procesarString");
         String respuesta = "";
         Hecho hecho0 = new Hecho();
-        String[] parts = linea.split("=");
-        String part1 = parts[0]; // 123
-        String part2 = parts[1]; // 654321
-        String conector = "es_valor_de";
-        respuesta = conector + "(" + part2 + "," + part1 + ")";
-        System.out.println("Hecho: " + respuesta);
-        hecho0.setPro(respuesta);
-        conector = conector.replace("_", " ");
-        respuesta = part2 + " " + conector + " " + part1;
-        System.out.println("Hecho: " + respuesta);
-        hecho0.setNat(respuesta);
-        hecho0.setExterno(1);
+        try {
+            String[] parts = linea.split("=");
+            String part1 = parts[0]; // 123
+            String part2 = parts[1]; // 654321
+            String conector = "es_valor_de";
+            respuesta = conector + "(" + part2 + "," + part1 + ")";
+            hecho0.setPro(respuesta);
+            conector = conector.replace("_", " ");
+            respuesta = part2 + " " + conector + " " + part1;
+            hecho0.setNat(respuesta);
+            hecho0.setExterno(1);
+        } catch (Exception e2) {
+            System.out.println("Exception: " + e2.getMessage());
+            e2.printStackTrace();
+        }
         return hecho0;
     }
 
     private void ejecutarModuloExterno() {
         String urlSe = this.getUrl_servicio_externo();
-        // /home/hernanbiondini/NetBeansProjects/EjecutaJarExterno/modulos_externos/WSweatherunlocked.jar
-        System.out.println("url_servicio_externo: " + urlSe);//modulos_externos/WSweatherunlocked.jar
-        try { 
+//        System.out.println("url_servicio_externo: " + urlSe);//modulos_externos/WSweatherunlocked.jar
+        try {
             String path = new File(".").getCanonicalPath();
             String url = path + urlSe;
-            System.out.println("url: " + url);
             String[] cmd = {"java", "-jar", url};
-            Runtime.getRuntime().exec(cmd);       
+            Runtime.getRuntime().exec(cmd);
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }
