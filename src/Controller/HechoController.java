@@ -33,7 +33,6 @@ public class HechoController extends EntityController{
 
     public void guardar(Hecho m) throws Exception{
            this.persist(m);
-           System.out.println(m.getNat());
     }
 
    public void borrar(Hecho m) throws Exception{

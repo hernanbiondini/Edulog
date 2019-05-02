@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
  * ABHechos.java
  *
  * Created on 25-nov-2011, 19:22:34
@@ -14,7 +14,6 @@ import Controller.PredicadoController;
 import Controller.ReglaController;
 import Controller.SujetoController;
 import Controller.HechoController;
-import Controller.HeliController;
 import Controller.SuliController;
 import Model.Hecho;
 import Model.Predicado;
@@ -42,6 +41,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import org.jdesktop.observablecollections.ObservableCollections;
+import util.ModuloExterno;
 
 /**
  *
@@ -99,6 +99,11 @@ public class ABHechos extends javax.swing.JDialog {
             tools2[j] = tooltipsText2.get(j);//C
         }
         this.jComboBox4.setRenderer(new ABHechos.MyRenderer2());
+        this.conf();
+        this.jButton4.setVisible(false);
+        if (this.getServicio_externo().trim().equalsIgnoreCase("SI")) {
+            this.jButton4.setVisible(true);
+        }
     }
 
     /**
@@ -137,6 +142,7 @@ public class ABHechos extends javax.swing.JDialog {
         jTextArea1 = new javax.swing.JTextArea();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
+        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
@@ -239,18 +245,25 @@ public class ABHechos extends javax.swing.JDialog {
             }
         });
 
+        jButton4.setText("Modulo Externo");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -277,7 +290,10 @@ public class ABHechos extends javax.swing.JDialog {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -300,11 +316,13 @@ public class ABHechos extends javax.swing.JDialog {
                     .addComponent(jCheckBox3))
                 .addGap(30, 30, 30)
                 .addComponent(jButton6)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -617,12 +635,17 @@ public class ABHechos extends javax.swing.JDialog {
         this.jCheckBox1.setSelected(false);
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        me.procesarHechosExternos();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Model.Hecho hecho1;
     private java.util.List hechos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
@@ -659,6 +682,34 @@ public class ABHechos extends javax.swing.JDialog {
     Color colors2[];
     String tools[];//C
     String tools2[];//C
+    private ModuloExterno me = new ModuloExterno();
+    private String servicio_externo = "";
+    private String servicio_externo_consulta = "";
+    private String url_servicio_externo = "";
+
+    public String getServicio_externo() {
+        return servicio_externo;
+    }
+
+    public void setServicio_externo(String servicio_externo) {
+        this.servicio_externo = servicio_externo;
+    }
+
+    public String getServicio_externo_consulta() {
+        return servicio_externo_consulta;
+    }
+
+    public void setServicio_externo_consulta(String servicio_externo_consulta) {
+        this.servicio_externo_consulta = servicio_externo_consulta;
+    }
+
+    public String getUrl_servicio_externo() {
+        return url_servicio_externo;
+    }
+
+    public void setUrl_servicio_externo(String url_servicio_externo) {
+        this.url_servicio_externo = url_servicio_externo;
+    }
 
     public void refresh() {
 
@@ -875,7 +926,7 @@ public class ABHechos extends javax.swing.JDialog {
                     break;
                 }
             }
-             System.out.println("buscarPl2");
+            System.out.println("buscarPl2");
             return encontrado;
         } catch (IOException e) {
             System.out.println("IOException: " + e.getMessage());
@@ -892,5 +943,16 @@ public class ABHechos extends javax.swing.JDialog {
                 return encontrado;
             }
         }
+    }
+
+    public void conf() {
+        try {
+            Properties p = new Properties();
+            p.load(new FileInputStream("conf.txt"));
+            this.setServicio_externo(p.getProperty("servicio_externo"));
+        } catch (Exception e) {
+            System.out.println("Error Configuracion: " + e);
+        }
+
     }
 }

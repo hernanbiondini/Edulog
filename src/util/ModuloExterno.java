@@ -60,7 +60,7 @@ public class ModuloExterno {
             // Ejecutar modulo externo
             ejecutarModuloExterno();
             try {
-                Thread.sleep(3000);
+                Thread.sleep(4000);
                 HechoController.getInstance().borrarAllHechoExterno();
                 leer();
                 consistencia();
@@ -110,8 +110,8 @@ public class ModuloExterno {
         Hecho hecho0 = new Hecho();
         try {
             String[] parts = linea.split("=");
-            String part1 = parts[0]; // 123
-            String part2 = parts[1]; // 654321
+            String part1 = parts[0]; 
+            String part2 = parts[1]; 
             String conector = "es_valor_de";
             respuesta = conector + "(" + part2 + "," + part1 + ")";
             hecho0.setPro(respuesta);
