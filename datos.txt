@@ -1,4 +1,4 @@
-/* Archivo actualizado: Tue Apr 30 22:10:41 ART 2019*/
-temperatura=13.0
-humedad=62.0
-viento=7.0
+/* Archivo actualizado: Wed May 01 21:07:42 ART 2019*/
+temperatura=17.0
+humedad=77.0
+viento=9.0

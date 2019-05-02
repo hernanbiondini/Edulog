@@ -39,6 +39,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import org.jdesktop.observablecollections.ObservableCollections;
 import prologj.Consulta;
+import util.ModuloExterno;
 
 /**
  *
@@ -846,6 +847,14 @@ public class Consultas extends javax.swing.JDialog {
         this.url_servicio_externo = url_servicio_externo;
     }
 
+    public String getServicio_externo_consulta() {
+        return servicio_externo_consulta;
+    }
+
+    public void setServicio_externo_consulta(String servicio_externo_consulta) {
+        this.servicio_externo_consulta = servicio_externo_consulta;
+    }
+
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         jTextArea2.setForeground(Color.BLACK);
         if (jTextArea1.getText().equalsIgnoreCase(".")) {
@@ -867,7 +876,9 @@ public class Consultas extends javax.swing.JDialog {
 
             try {
 
-                procesarHechosExternos();
+                if (getServicio_externo_consulta().trim().equalsIgnoreCase("SI")) {
+                    me.procesarHechosExternos();
+                }
 
                 String respuestaUnica = "";
                 String respuestaMultiple = "";
@@ -1437,6 +1448,7 @@ public class Consultas extends javax.swing.JDialog {
     private String errorBase = "";
     private String error = "";
     private String servicio_externo = "";
+    private String servicio_externo_consulta = "";
     private String url_servicio_externo = "";
     Color colors[];
     Color colors2[];
@@ -1446,6 +1458,7 @@ public class Consultas extends javax.swing.JDialog {
     private static FileReader fr = null;
     private static BufferedReader br = null;
     private static String hecho = null;
+    private ModuloExterno me = new ModuloExterno();
 
     private void cambio() throws FileNotFoundException, IOException {
         Properties p = new Properties();
@@ -1602,98 +1615,11 @@ public class Consultas extends javax.swing.JDialog {
         try {
             Properties p = new Properties();
             p.load(new FileInputStream("conf.txt"));
-            this.setServicio_externo(p.getProperty("servicio_externo"));
-            this.setUrl_servicio_externo(p.getProperty("url_servicio_externo"));
+            this.setServicio_externo_consulta(p.getProperty("servicio_externo_consulta"));
         } catch (Exception e) {
             System.out.println("Error Configuracion: " + e);
         }
-    }
 
-    // Consultar ws, si hubo respuesta sigo
-    // Borro hechos externos antiguos
-    // Leo archivo y escribo hechos nuevos
-    private void procesarHechosExternos() {
-        if (this.getServicio_externo().equals("SI")) {
-            // Ejecutar modulo externo
-            ejecutarModuloExterno();
-            try {
-                Thread.sleep(1000);
-                HechoController.getInstance().borrarAllHechoExterno();
-                leer();
-                consistencia();
-            } catch (InterruptedException ex) {
-                System.out.println("InterruptedException: " + ex.getMessage());
-                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (Exception e) {
-                System.out.println("InterruptedException: " + e.getMessage());
-                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, e);
-            }
-        }
-    }
-
-    private static void leer() {
-        try {
-            archivo = new File("datos.txt");
-            fr = new FileReader(archivo);
-            br = new BufferedReader(fr);
-            String linea;
-            Hecho hecho1 = new Hecho();
-            int cont = 0;
-            while ((linea = br.readLine()) != null) {
-                if (cont > 0) {
-                    System.out.println("Linea: " + linea);
-                    hecho1 = procesarString(linea);
-                    HechoController.getInstance().guardar(hecho1);
-                }
-                cont = cont + 1;
-            }
-        } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-            try {
-                if (null != fr) {
-                    fr.close();
-                }
-            } catch (Exception e2) {
-                System.out.println("Exception: " + e2.getMessage());
-                e2.printStackTrace();
-            }
-        }
-    }
-
-    private static Hecho procesarString(String linea) {
-        String respuesta = "";
-        Hecho hecho0 = new Hecho();
-        try {
-            String[] parts = linea.split("=");
-            String part1 = parts[0]; // 123
-            String part2 = parts[1]; // 654321
-            String conector = "es_valor_de";
-            respuesta = conector + "(" + part2 + "," + part1 + ")";
-            hecho0.setPro(respuesta);
-            conector = conector.replace("_", " ");
-            respuesta = part2 + " " + conector + " " + part1;
-            hecho0.setNat(respuesta);
-            hecho0.setExterno(1);
-        } catch (Exception e2) {
-            System.out.println("Exception: " + e2.getMessage());
-            e2.printStackTrace();
-        }
-        return hecho0;
-    }
-
-    private void ejecutarModuloExterno() {
-        String urlSe = this.getUrl_servicio_externo();
-//        System.out.println("url_servicio_externo: " + urlSe);//modulos_externos/WSweatherunlocked.jar
-        try {
-            String path = new File(".").getCanonicalPath();
-            String url = path + urlSe;
-            String[] cmd = {"java", "-jar", url};
-            Runtime.getRuntime().exec(cmd);
-        } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
-        }
     }
 
 }
