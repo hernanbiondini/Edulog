@@ -98,6 +98,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -243,6 +244,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem4);
+
+        jMenuItem7.setText("Configuración de modulo externo");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
 
         jMenuItem2.setText("Modo");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -440,6 +449,11 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        ConfiguracionModuloExterno s = new ConfiguracionModuloExterno(this, true);
+        s.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -479,6 +493,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 private String cambio = "";

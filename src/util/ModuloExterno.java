@@ -110,8 +110,8 @@ public class ModuloExterno {
         Hecho hecho0 = new Hecho();
         try {
             String[] parts = linea.split("=");
-            String part1 = parts[0]; 
-            String part2 = parts[1]; 
+            String part1 = parts[0];
+            String part2 = parts[1];
             String conector = "es_valor_de";
             respuesta = conector + "(" + part2 + "," + part1 + ")";
             hecho0.setPro(respuesta);
@@ -127,6 +127,8 @@ public class ModuloExterno {
     }
 
     private void ejecutarModuloExterno() {
+        System.out.println("");
+        System.out.println("Ejecutando módulo externo...");
         String urlSe = this.getUrl_servicio_externo();
 //        System.out.println("url_servicio_externo: " + urlSe);//modulos_externos/WSweatherunlocked.jar
         try {
@@ -134,8 +136,11 @@ public class ModuloExterno {
             String url = path + urlSe;
             String[] cmd = {"java", "-jar", url};
             Runtime.getRuntime().exec(cmd);
+            System.out.println("Fin ejecución módulo externo...");
+            System.out.println("");
         } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
+            System.out.println("Exception en ejecución de módulo externo: " + e.getMessage());
+            System.out.println("");
         }
     }
 
@@ -216,7 +221,7 @@ public class ModuloExterno {
         }
     }
 
-        public void conf() {
+    public void conf() {
         try {
             Properties p = new Properties();
             p.load(new FileInputStream("conf.txt"));
@@ -226,5 +231,5 @@ public class ModuloExterno {
             System.out.println("Error Configuracion: " + e);
         }
     }
-        
+
 }
