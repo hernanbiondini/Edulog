@@ -1003,6 +1003,9 @@ public class Consultas extends javax.swing.JDialog {
                 }
             }
         }
+        refresh();
+        System.out.println("Volver ");
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -1620,6 +1623,29 @@ public class Consultas extends javax.swing.JDialog {
             System.out.println("Error Configuracion: " + e);
         }
 
+    }
+
+    private void refresh() {
+        System.out.println("refresh");
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
+        heres = ObservableCollections.observableList(HereController.getInstance().getAllHeRe());
+
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, heres, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nombre}"));
+        columnBinding.setColumnName("");
+        columnBinding.setEditable(false);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(900);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(900);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(900);
+        }
+     
+        bindingGroup.bind();
+        pack();
     }
 
 }

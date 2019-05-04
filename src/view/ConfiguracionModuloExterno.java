@@ -264,7 +264,7 @@ public class ConfiguracionModuloExterno extends javax.swing.JDialog {
             p.setProperty("servicio_externo_consulta", "NO");
         }
         p.setProperty("url_servicio_externo", this.jTextField1.getText());
-        FileOutputStream out = new FileOutputStream("conf.ini");
+        FileOutputStream out = new FileOutputStream("conf.txt");
         p.save(out, "/* properties updated */");
     }
 
